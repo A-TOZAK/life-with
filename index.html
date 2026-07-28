@@ -32,9 +32,10 @@
   img{ max-width:100%; display:block; }
   a{ color:inherit; }
   .wrap{ max-width:var(--max); margin:0 auto; padding:0 24px; }
-  /* 見出しはどの画面幅でも1行（折り返し禁止・幅に応じて縮小） */
+  /* 見出しはどの画面幅でも勝手に折り返さない（幅に応じて縮小。折るときはbr.sp/br.tbで意図的に） */
   h2{ font-family:"Zen Maru Gothic",sans-serif; font-weight:700; white-space:nowrap;
       font-size:clamp(26px,3.4vw,38px); letter-spacing:.04em; line-height:1.65; }
+  br.sp, br.tb{ display:none; }
   .kick{ font-family:"Zen Maru Gothic",sans-serif; font-size:13.5px; letter-spacing:.3em;
          color:var(--ai); font-weight:700; }
   .kick::after{ content:""; display:inline-block; width:26px; height:2px; border-radius:2px;
@@ -289,6 +290,7 @@
   /* ── タブレット以下（〜900px）：縦積みの基本形 ── */
   @media (max-width:900px){
     br.pc{ display:none; }
+    br.tb{ display:inline; }
     nav.g a:not(.btn){ display:none; }
     h2{ font-size:min(30px, 4.3vw); }
     .vbig{ font-size:min(24px, 4.3vw); }
@@ -315,6 +317,7 @@
   /* ── スマホ（〜600px）：1列・圧縮 ── */
   @media (max-width:600px){
     body{ font-size:16.5px; }
+    br.sp{ display:inline; }
     .sec{ padding:60px 0; }
     .hero-ov{ padding:24px 22px 4px; align-items:flex-start; text-align:left; }
     .hero .lead{ font-size:16px; text-align:left; }
@@ -381,7 +384,7 @@
       <div class="vm-row" data-rv>
         <span class="vlabel">Vision<small>めざす社会</small></span>
         <div>
-          <p class="vbig">ゆとりをもって、人を育てる社会をつくる。</p>
+          <p class="vbig">ゆとりをもって、<br class="tb">人を育てる社会をつくる。</p>
           <p class="vnote">「人」は子どもだけではありません。先生も、親も、地域の人も、人を育てる側にいます。「ゆとり」は3つ。<b>気持ちのゆとり、お金のゆとり、時間のゆとり</b>です。</p>
         </div>
       </div>
@@ -672,7 +675,7 @@
   <div class="wrap">
     <div class="sec-head" data-rv>
       <span class="kick">Profile</span>
-      <h2>困りごとを解決していった先に、今がある。</h2>
+      <h2>困りごとを解決していった先に、<br class="sp">今がある。</h2>
     </div>
     <div class="prof">
       <div class="ph" data-rv><img src="assets/author.jpg" alt="外﨑顯博の写真"></div>
@@ -701,7 +704,7 @@
       <div class="contact-grid">
         <div>
           <span class="kick">Contact</span>
-          <h2>まずは、状況をお聞かせください。</h2>
+          <h2>まずは、状況を<br class="sp">お聞かせください。</h2>
           <p style="margin-top:14px; font-size:15.5px; color:#454a50;">校内研修、登壇、教育DXの実践共有、学校と企業・地域をつなぐ共同企画など。現在は現役教員として活動しているため、所属先の規程と手続きを確認のうえ、お受けできるかも含めてお返事します。</p>
         </div>
         <div>
