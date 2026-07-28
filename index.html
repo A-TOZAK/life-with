@@ -26,13 +26,14 @@
   html{ scroll-behavior:smooth; scroll-padding-top:74px; }
   body{ font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;
         color:var(--ink); background:var(--paper); line-height:1.95; font-size:17px;
-        -webkit-font-smoothing:antialiased; position:relative; }
+        -webkit-font-smoothing:antialiased; position:relative; overflow-x:clip; }
   main, header, footer{ position:relative; z-index:1; }
   .alt{ background:var(--paper2); }
   img{ max-width:100%; display:block; }
   a{ color:inherit; }
   .wrap{ max-width:var(--max); margin:0 auto; padding:0 24px; }
-  h2{ font-family:"Zen Maru Gothic",sans-serif; font-weight:700;
+  /* 見出しはどの画面幅でも1行（折り返し禁止・幅に応じて縮小） */
+  h2{ font-family:"Zen Maru Gothic",sans-serif; font-weight:700; white-space:nowrap;
       font-size:clamp(26px,3.4vw,38px); letter-spacing:.04em; line-height:1.65; }
   .kick{ font-family:"Zen Maru Gothic",sans-serif; font-size:13.5px; letter-spacing:.3em;
          color:var(--ai); font-weight:700; }
@@ -134,7 +135,7 @@
            color:var(--ai); letter-spacing:.08em; }
   .vlabel small{ display:block; font-size:11.5px; color:var(--sub); font-weight:400;
                  letter-spacing:.14em; margin-top:2px; }
-  .vbig{ font-family:"Zen Maru Gothic",sans-serif; font-weight:700;
+  .vbig{ font-family:"Zen Maru Gothic",sans-serif; font-weight:700; white-space:nowrap;
          font-size:clamp(20px,2.4vw,27px); letter-spacing:.04em; line-height:1.7; }
   .vnote{ font-size:15px; color:#454a50; margin-top:8px; }
   .vlist{ list-style:none; }
@@ -257,6 +258,7 @@
   .contact-card{ background:var(--sora2); border-radius:26px; padding:58px 58px; position:relative; }
   .contact-card .deco{ position:absolute; right:44px; top:-34px; width:130px; pointer-events:none; }
   .contact-grid{ display:grid; grid-template-columns:1.05fr .95fr; gap:48px; }
+  .contact-card h2{ font-size:clamp(22px, 2.1vw, 28px); }
   .chips{ list-style:none; display:flex; flex-wrap:wrap; gap:9px; margin:16px 0 24px; }
   .chips li{ background:#fff; border:1px solid var(--line); border-radius:999px;
              padding:6px 17px; font-size:14px; color:#454a50; }
@@ -288,6 +290,8 @@
   @media (max-width:900px){
     br.pc{ display:none; }
     nav.g a:not(.btn){ display:none; }
+    h2{ font-size:min(30px, 4.3vw); }
+    .vbig{ font-size:min(24px, 4.3vw); }
     .sec{ padding:68px 0; }
     .sec-head .deco, .contact-card .deco{ display:none; }
     .hero-art{ display:flex; flex-direction:column-reverse; }
@@ -311,10 +315,11 @@
   /* ── スマホ（〜600px）：1列・圧縮 ── */
   @media (max-width:600px){
     body{ font-size:16.5px; }
-    nav.g .btn{ padding:9px 18px; font-size:13.5px; }
     .sec{ padding:60px 0; }
-    .hero-ov{ padding:26px 20px 6px; }
-    .hero .lead{ font-size:16px; }
+    .hero-ov{ padding:24px 22px 4px; align-items:flex-start; text-align:left; }
+    .hero .lead{ font-size:16px; text-align:left; }
+    .runby{ text-align:left; }
+    .cta{ justify-content:flex-start; }
     .sub3, .case3, .aud, .voices, .steps{ grid-template-columns:1fr; }
     .vm-row{ grid-template-columns:1fr; gap:8px; padding:24px 22px; }
     .origin{ padding:30px 22px; }
@@ -339,7 +344,6 @@
       <a href="#voice">先生の声</a>
       <a href="#news">お知らせ</a>
       <a href="#profile">プロフィール</a>
-      <a class="btn btn-ai" href="#contact">相談・連携</a>
     </nav>
   </div>
 </header>
@@ -443,7 +447,7 @@
     <div class="jitsu-head" data-rv>
       <div class="sec-head">
         <span class="kick">Service</span>
-        <h2>主軸は、授業改善のための<br class="pc">業務改善です。</h2>
+        <h2>主軸は、授業改善のための業務改善。</h2>
       </div>
       <p class="lead" style="max-width:400px; font-size:15.5px;">校務の時間を減らすこと自体が目的ではありません。空いた時間が授業の準備に戻って、はじめて意味があると思っています。</p>
     </div>
@@ -502,7 +506,7 @@
   <div class="wrap">
     <div class="sec-head" data-rv>
       <span class="kick">Record</span>
-      <h2>困りごとから始めて、続く形に整えるまで。</h2>
+      <h2>困りごとから始めて、続く形に。</h2>
     </div>
     <div class="case3">
       <div class="case" data-rv>
@@ -697,7 +701,7 @@
       <div class="contact-grid">
         <div>
           <span class="kick">Contact</span>
-          <h2>まずは、状況を<br>お聞かせください。</h2>
+          <h2>まずは、状況をお聞かせください。</h2>
           <p style="margin-top:14px; font-size:15.5px; color:#454a50;">校内研修、登壇、教育DXの実践共有、学校と企業・地域をつなぐ共同企画など。現在は現役教員として活動しているため、所属先の規程と手続きを確認のうえ、お受けできるかも含めてお返事します。</p>
         </div>
         <div>
