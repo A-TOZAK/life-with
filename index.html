@@ -23,7 +23,9 @@
     --max:1060px; --r:18px;
   }
   *{ margin:0; padding:0; box-sizing:border-box; }
-  html{ scroll-behavior:smooth; scroll-padding-top:74px; }
+  /* overflow-x:clip はスクロール枠を作らないので sticky ヘッダーは効いたまま。
+     はみ出したあしらい（.deco）で右に数px動くのを止める */
+  html{ scroll-behavior:smooth; scroll-padding-top:82px; overflow-x:clip; }
   body{ font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;
         color:var(--ink); background:var(--paper); line-height:1.95; font-size:17px;
         -webkit-font-smoothing:antialiased; position:relative; overflow-x:clip; }
@@ -32,7 +34,8 @@
   img{ max-width:100%; display:block; }
   a{ color:inherit; }
   .wrap{ max-width:var(--max); margin:0 auto; padding:0 24px; }
-  /* 見出しはどの画面幅でも勝手に折り返さない（幅に応じて縮小。折るときはbr.sp/br.tbで意図的に） */
+  /* 見出し：PCは1行（幅に応じて縮小）。スマホ・タブレットは縮めずに折り返す
+     ＝縮小だけで通すと、375pxで見出しが16pxまで小さくなり本文より小さくなるため */
   h2{ font-family:"Zen Maru Gothic",sans-serif; font-weight:700; white-space:nowrap;
       font-size:clamp(26px,3.4vw,38px); letter-spacing:.04em; line-height:1.65; }
   br.sp, br.tb{ display:none; }
@@ -64,9 +67,9 @@
     -webkit-mask-image:radial-gradient(ellipse 68% 68% at 50% 50%, #000 55%, transparent 92%);
     mask-image:radial-gradient(ellipse 68% 68% at 50% 50%, #000 55%, transparent 92%); }
 
-  /* ヘッダー */
-  header{ position:sticky; top:0; z-index:100; background:rgba(255,255,255,.93);
-          backdrop-filter:blur(6px); border-bottom:1px solid rgba(231,233,236,.9); }
+  /* ヘッダー：地は不透明。半透明だと下の文章が透けて読みにくい */
+  header{ position:sticky; top:0; z-index:100; background:#fff;
+          border-bottom:1px solid var(--line); }
   .hd{ max-width:var(--max); margin:0 auto; padding:0 24px; height:70px;
        display:flex; align-items:center; justify-content:space-between; gap:14px; }
   .brand{ display:flex; align-items:center; gap:10px; text-decoration:none; }
@@ -232,9 +235,30 @@
   /* 読みもの（note・X） */
   .embed-grid{ display:grid; grid-template-columns:1fr 1fr; gap:34px; margin-top:30px; align-items:start; }
   .embed-col h3{ font-family:"Zen Maru Gothic",sans-serif; font-size:19px; margin-bottom:12px; }
-  .note-embed{ border:0; display:block; width:100%; margin:0 0 14px; }
+  /* noteの埋め込みは中身の高さが足りないと題名が切れる。下限を決めておく */
+  .note-embed{ border:0; display:block; width:100%; margin:0 0 14px; min-height:260px; }
   .x-wrap{ background:#fff; border:1px solid var(--line); border-radius:var(--r); padding:10px 18px; }
   .embed-col .more{ display:inline-block; margin-top:6px; font-size:14.5px; }
+
+  /* 研修でお配りしている資料 */
+  .docs{ display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:32px; }
+  .doc{ background:#fff; border:1px solid var(--line); border-radius:var(--r); overflow:hidden;
+        display:flex; flex-direction:column; }
+  .doc .shot{ background:var(--sora2); border-bottom:1px solid var(--line); }
+  .doc .shot img{ width:100%; height:230px; object-fit:cover; object-position:top center; }
+  .doc .bd{ padding:24px 26px 26px; display:flex; flex-direction:column; flex:1; }
+  .doc .meta{ font-size:12.5px; letter-spacing:.14em; color:var(--karashi); font-weight:700;
+              font-family:"Zen Maru Gothic",sans-serif; }
+  .doc h3{ font-family:"Zen Maru Gothic",sans-serif; font-size:19px; line-height:1.7; margin:8px 0 10px; }
+  .doc p{ font-size:15px; color:#454a50; }
+  .doc .toc{ list-style:none; margin:14px 0 0; }
+  .doc .toc li{ font-size:14px; color:#4b5158; padding:6px 0 6px 1.3em; position:relative; line-height:1.8; }
+  .doc .toc li::before{ content:""; position:absolute; left:2px; top:14px; width:6px; height:6px;
+                        border-radius:50%; background:var(--sora); border:1.5px solid var(--ai); }
+  .doc .foot{ margin-top:auto; padding-top:18px; display:flex; align-items:center;
+              gap:14px; flex-wrap:wrap; }
+  .doc .btn{ padding:12px 26px; font-size:15px; }
+  .doc .size{ font-size:12.5px; color:var(--sub); }
 
   /* 対象別 */
   .aud{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:32px; }
@@ -273,7 +297,8 @@
   .fmap{ display:flex; gap:54px; }
   .fmap b{ display:block; font-family:"Zen Maru Gothic",sans-serif; font-size:12px;
            letter-spacing:.18em; color:var(--karashi); margin-bottom:8px; }
-  .fmap a{ display:block; font-size:14px; color:#454a50; text-decoration:none; padding:3.5px 0; }
+  .fmap a{ display:block; font-size:14px; color:#454a50; text-decoration:none; padding:3.5px 0;
+           white-space:nowrap; }
   .fmap a:hover{ color:var(--ink); }
   .fc{ font-size:12.5px; color:var(--sub); margin-top:30px; line-height:1.9; }
 
@@ -285,16 +310,21 @@
     z-index:90; opacity:0; pointer-events:none; transform:translateY(8px);
     transition:opacity .3s ease, transform .3s ease; }
   #float-cta.show{ opacity:1; pointer-events:auto; transform:none; }
-  #float-cta .btn{ box-shadow:0 6px 18px rgba(35,39,44,.16); }
+  /* 自分自身が .btn。子孫セレクタだと当たらず影が消えて、本文に重なった時に壊れて見える */
+  #float-cta.btn{ box-shadow:0 3px 10px rgba(35,39,44,.18), 0 12px 28px rgba(35,39,44,.16);
+                  border:2px solid #fff; }
 
   /* ── タブレット以下（〜900px）：縦積みの基本形 ── */
   @media (max-width:900px){
     br.pc{ display:none; }
     br.tb{ display:inline; }
     nav.g a:not(.btn){ display:none; }
-    h2{ font-size:min(30px, 4.3vw); }
-    .vbig{ font-size:min(24px, 4.3vw); }
+    /* 縮めずに折り返す（縮小だと本文より小さい見出しになる） */
+    h2{ white-space:normal; font-size:27px; line-height:1.6; }
+    .vbig{ white-space:normal; font-size:23px; line-height:1.65; }
+    .contact-card h2{ font-size:25px; }
     .sec{ padding:68px 0; }
+    .docs{ grid-template-columns:1fr; }
     .sec-head .deco, .contact-card .deco{ display:none; }
     .hero-art{ display:flex; flex-direction:column-reverse; }
     .hero-ov{ position:static; padding:30px 24px 8px; }
@@ -316,8 +346,17 @@
   }
   /* ── スマホ（〜600px）：1列・圧縮 ── */
   @media (max-width:600px){
+    html{ scroll-padding-top:68px; }
     body{ font-size:16.5px; }
     br.sp{ display:inline; }
+    /* スマホのヘッダーは低くして、本文の見える面積を増やす */
+    .hd{ height:58px; padding:0 20px; }
+    .brand .logo-img{ height:40px; }
+    h2{ font-size:24px; }
+    .vbig{ font-size:21px; }
+    .contact-card h2{ font-size:23px; }
+    .note-embed{ min-height:300px; }
+    .fmap{ gap:30px; }
     .sec{ padding:60px 0; }
     .hero-ov{ padding:24px 22px 4px; align-items:flex-start; text-align:left; }
     .hero .lead{ font-size:16px; text-align:left; }
@@ -343,6 +382,7 @@
     <nav class="g">
       <a href="#about">LiFE withについて</a>
       <a href="#work">取り組み</a>
+      <a href="#shiryo">研修資料</a>
       <a href="#record">実践の記録</a>
       <a href="#voice">先生の声</a>
       <a href="#news">お知らせ</a>
@@ -504,6 +544,59 @@
   </div>
 </section>
 
+<!-- 研修でお配りしている資料 ★中身は全て自作。追加するときは shiryo/index.html にも目次を足す -->
+<section class="sec" id="shiryo" style="padding-top:20px;">
+  <div class="wrap">
+    <div class="sec-head" data-rv style="border-top:1px solid var(--line); padding-top:64px;">
+      <span class="kick">Documents</span>
+      <h2>研修で配っている資料を、そのまま置いています。</h2>
+      <img class="deco" src="assets/ehon/p_prints.png" alt="" style="right:-140px;">
+      <p class="lead" style="margin-top:12px;">校内研修や研究会で実際にお配りしたものです。どんな話をしているのか、中を読んでから決めていただけます。ダウンロードにご連絡はいりません。</p>
+    </div>
+    <div class="docs">
+      <div class="doc" data-rv>
+        <span class="shot"><img src="assets/shiryo/thumb_ict.png" alt="資料の中面。1年生国語「いろいろなのりもの」でロイロノートを使った調べ学習の図解"></span>
+        <div class="bd">
+          <span class="meta">ICT・生成AI ｜ 26ページ</span>
+          <h3>ICTと生成AIを、<br class="pc">授業でどう使ってきたか</h3>
+          <p>「私はICTを使いこなせない」と感じている先生に向けて書いたものです。1年生の国語から6年生の総合まで、学年・教科ごとの実践を20例ならべています。</p>
+          <ul class="toc">
+            <li>「使いこなす」とは、どういう状態か</li>
+            <li>ICTを使う時の「すき間」に耐えられない</li>
+            <li>低学年はICTより紙とえんぴつじゃないの？</li>
+            <li>1〜6年の実践20例（国語・算数・社会・理科・体育・道徳・総合）</li>
+            <li>学校全体で進めるときの順番</li>
+          </ul>
+          <div class="foot">
+            <a class="btn btn-ai" href="assets/shiryo/kenshu-ict-seiseiai.pdf" target="_blank" rel="noopener">資料を読む（PDF）</a>
+            <span class="size">12MB／26ページ</span>
+          </div>
+        </div>
+      </div>
+      <div class="doc" data-rv>
+        <span class="shot"><img src="assets/shiryo/thumb_shakaika.png" alt="資料の中面。社会科と生成AIの活用の考え方を5段階で示した図解"></span>
+        <div class="bd">
+          <span class="meta">社会科×生成AI ｜ 8ページ</span>
+          <h3>社会科の授業づくりに、<br class="pc">生成AIをどう入れるか</h3>
+          <p>鹿児島県の小学校社会科研究会でお話ししたときの資料です。地域素材の集め方から、作った副読本をデジタル教科書の形にするところまで書いています。</p>
+          <ul class="toc">
+            <li>使うことを目的にせず、理想の社会から授業を考える</li>
+            <li>Deep Researchで地域素材に「あたり」をつける</li>
+            <li>自治体・企業の資料を子ども向けに整理する</li>
+            <li>単元ごとに、リンクをまとめたサイトを作る</li>
+            <li>児童のデータの扱いで、絶対に守る一線</li>
+          </ul>
+          <div class="foot">
+            <a class="btn btn-ai" href="assets/shiryo/kenshu-shakaika-seiseiai.pdf" target="_blank" rel="noopener">資料を読む（PDF）</a>
+            <span class="size">2.6MB／8ページ</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="note" style="margin-top:18px;">中身の目次は <a class="tl" href="shiryo/">資料の一覧ページ</a> にまとめています。資料は全て自分で書いて作ったものです。教室でそのまま使っていただいて構いません。</p>
+  </div>
+</section>
+
 <!-- 実践の記録 -->
 <section class="sec alt" id="record">
   <div class="wrap">
@@ -640,7 +733,7 @@
           <dt>相談できること</dt>
           <dd>校内研修、ICT・生成AI活用の伴走、研究会等での登壇</dd>
           <dt>まず見ていただきたいもの</dt>
-          <dd><a class="tl" href="#work">取り組み</a>　<a class="tl" href="#record">実践の記録</a>　<a class="tl" href="#profile">プロフィール</a></dd>
+          <dd><a class="tl" href="shiryo/">研修でお配りしている資料</a>　<a class="tl" href="#record">実践の記録</a>　<a class="tl" href="#profile">プロフィール</a></dd>
         </dl>
         <a class="tl" href="#contact">相談・連携について問い合わせる →</a>
       </div>
@@ -662,7 +755,7 @@
           <dt>お渡しできるもの</dt>
           <dd>明日の授業に使える無料教材、ICT・生成AIの実践、学び合いの場</dd>
           <dt>まず見ていただきたいもの</dt>
-          <dd><a class="tl" href="https://a-tozak.github.io/School_Stock/" target="_blank" rel="noopener">School Stock ↗</a>　<a class="tl" href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a></dd>
+          <dd><a class="tl" href="https://a-tozak.github.io/School_Stock/" target="_blank" rel="noopener">School Stock ↗</a>　<a class="tl" href="shiryo/">研修資料</a>　<a class="tl" href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a></dd>
         </dl>
         <a class="tl" href="https://a-tozak.github.io/School_Stock/soudan/" target="_blank" rel="noopener">先生の相談窓口（無料）へ ↗</a>
       </div>
@@ -740,6 +833,7 @@
         <div><b>SITE</b>
           <a href="#about">LiFE withについて</a>
           <a href="#work">取り組み</a>
+          <a href="shiryo/">研修資料</a>
           <a href="#record">実践の記録</a>
           <a href="#voice">先生の声</a>
           <a href="news/">お知らせ</a>

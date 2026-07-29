@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>研修資料 ── LiFE with</title>
+<meta name="description" content="校内研修や研究会で実際にお配りしたLiFE with（外﨑顯博）の資料です。ICT・生成AIの授業実践20例、社会科×生成AIの授業づくり。全ページの目次つき・無料。">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="研修資料 ── LiFE with">
+<meta property="og:description" content="校内研修や研究会でお配りした資料を、そのまま公開しています。">
+<meta property="og:image" content="https://a-tozak.github.io/life-with/assets/og.png">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://a-tozak.github.io/life-with/shiryo/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/logo_icon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#ffffff; --paper2:#f4f5f7; --ink:#2f3236; --sub:#6b7076;
+    --ai:#1866b2; --ai2:#12518f; --sora:#eaf1f9; --sora2:#f2f7fc;
+    --mizu:#b9d1e8; --karashi:#6f94bd; --line:#e7e9ec; --max:900px;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; scroll-padding-top:82px; }
+  body{ font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;
+        color:var(--ink); background:var(--paper); line-height:1.95; font-size:17px;
+        -webkit-font-smoothing:antialiased; overflow-x:clip; }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; }
+  .wrap{ max-width:var(--max); margin:0 auto; padding:0 24px; }
+  header{ position:sticky; top:0; z-index:100; background:#fff; border-bottom:1px solid var(--line); }
+  .hd{ max-width:var(--max); margin:0 auto; padding:0 24px; height:70px;
+       display:flex; align-items:center; justify-content:space-between; gap:14px; }
+  .brand img{ height:48px; width:auto; }
+  .back{ font-size:14.5px; color:#454a50; text-decoration:none; white-space:nowrap; }
+  .back:hover{ color:var(--ink); }
+  main{ padding:60px 0 80px; }
+  .kick{ font-family:"Zen Maru Gothic",sans-serif; font-size:13.5px; letter-spacing:.3em;
+         color:var(--ai); font-weight:700; }
+  .kick::after{ content:""; display:inline-block; width:26px; height:2px; border-radius:2px;
+                background:var(--mizu); vertical-align:middle; margin-left:12px; }
+  h1{ font-family:"Zen Maru Gothic",sans-serif; font-weight:700;
+      font-size:clamp(26px,3.4vw,36px); letter-spacing:.04em; line-height:1.65; margin-top:4px; }
+  .lead{ color:#454a50; margin-top:16px; font-size:16.5px; }
+  .note{ font-size:13.5px; color:var(--sub); line-height:1.9; }
+  .tl{ color:var(--ai); font-weight:600; text-decoration:none;
+       border-bottom:1px solid rgba(42,91,143,.45); }
+  .tl:hover{ opacity:.75; }
+  .btn{ display:inline-block; text-decoration:none; font-size:16px; font-weight:700;
+        font-family:"Zen Maru Gothic",sans-serif; letter-spacing:.06em;
+        padding:14px 32px; border-radius:999px; background:var(--ai); color:#fff; }
+  .btn:hover{ background:var(--ai2); }
+
+  .doc{ margin-top:52px; border-top:1px solid var(--line); padding-top:48px; }
+  .doc-head{ display:grid; grid-template-columns:300px 1fr; gap:36px; align-items:start; }
+  .doc-shot{ border:1px solid var(--line); border-radius:14px; overflow:hidden; background:var(--sora2); }
+  .meta{ font-family:"Zen Maru Gothic",sans-serif; font-size:12.5px; letter-spacing:.14em;
+         color:var(--karashi); font-weight:700; }
+  .doc h2{ font-family:"Zen Maru Gothic",sans-serif; font-weight:700; font-size:clamp(21px,2.4vw,27px);
+           letter-spacing:.03em; line-height:1.65; margin:8px 0 12px; }
+  .doc p{ font-size:16px; color:#454a50; }
+  .foot{ margin-top:22px; display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+  .size{ font-size:13px; color:var(--sub); }
+
+  .toc-head{ font-family:"Zen Maru Gothic",sans-serif; font-weight:700; font-size:16px;
+             margin:34px 0 0; letter-spacing:.06em; }
+  .toc{ list-style:none; margin-top:14px; columns:2; column-gap:34px; }
+  .toc li{ font-size:14.5px; color:#4b5158; line-height:1.85; padding:7px 0 7px 2.6em;
+           position:relative; break-inside:avoid; border-top:1px dashed var(--line); }
+  .toc li .n{ position:absolute; left:0; top:7px; font-family:"Zen Maru Gothic",sans-serif;
+              font-weight:700; font-size:12.5px; color:var(--ai); letter-spacing:.06em; }
+
+  .ask{ margin-top:64px; background:var(--sora2); border-radius:22px; padding:38px 40px; }
+  .ask h2{ font-family:"Zen Maru Gothic",sans-serif; font-weight:700; font-size:21px; letter-spacing:.03em; }
+  .ask p{ font-size:15.5px; color:#454a50; margin-top:10px; }
+  .ask .btn{ margin-top:20px; }
+
+  footer{ padding:36px 0 40px; }
+  .fc{ font-size:12.5px; color:var(--sub); border-top:1px solid var(--line);
+       padding-top:24px; line-height:1.9; }
+
+  @media (max-width:760px){
+    .doc-head{ grid-template-columns:1fr; gap:22px; }
+    .doc-shot{ max-width:340px; }
+    .toc{ columns:1; }
+  }
+  @media (max-width:600px){
+    html{ scroll-padding-top:68px; }
+    body{ font-size:16.5px; }
+    .hd{ height:58px; padding:0 20px; }
+    .brand img{ height:40px; }
+    main{ padding:44px 0 64px; }
+    .ask{ padding:30px 24px; border-radius:18px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hd">
+    <a class="brand" href="../" aria-label="LiFE with トップへ">
+      <img src="../assets/logo.png" alt="LiFE with">
+    </a>
+    <a class="back" href="../">← トップへ戻る</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <span class="kick">Documents</span>
+    <h1>研修でお配りしている資料</h1>
+    <p class="lead">校内研修や研究会で実際にお配りしたものを、そのまま置いています。どんな話をしているのか、中を読んでから決めていただけます。全ページ自分で書いたもので、教室でそのまま使っていただいて構いません。ダウンロードにご連絡はいりません。</p>
+
+    <!-- ── 資料1：ICT・生成AI ── -->
+    <section class="doc" id="ict">
+      <div class="doc-head">
+        <div class="doc-shot">
+          <img src="../assets/shiryo/thumb_ict.png" alt="資料の中面。1年生国語「いろいろなのりもの」でロイロノートを使った調べ学習の図解">
+        </div>
+        <div>
+          <span class="meta">ICT・生成AI ｜ 校内研修でお配りしたもの</span>
+          <h2>ICTと生成AIを、授業でどう使ってきたか</h2>
+          <p>「私はICTを使いこなせない」と感じている先生に向けて書いたものです。前半は考え方、後半は1年生の国語から6年生の総合まで、学年・教科ごとの実践を20例。1つの実践につき、概要・よかった点・使った図解を見開き1ページにまとめています。</p>
+          <div class="foot">
+            <a class="btn" href="../assets/shiryo/kenshu-ict-seiseiai.pdf" target="_blank" rel="noopener">資料を読む（PDF）</a>
+            <span class="size">12MB／26ページ／A4横</span>
+          </div>
+        </div>
+      </div>
+      <p class="toc-head">この資料に書いてあること</p>
+      <ul class="toc">
+        <li><span class="n">01</span>私にICTは使いこなせないと感じている先生へ</li>
+        <li><span class="n">02</span>ICTを使う時のすき間に耐えられない・・・</li>
+        <li><span class="n">03</span>低学年はICTより紙とえんぴつじゃないの？</li>
+        <li><span class="n">04</span>発達段階に合わせてICTや生成AIの活用をデザインする</li>
+        <li><span class="n">05</span>1年生 国語「いろいろな のりもの」</li>
+        <li><span class="n">06</span>1年生 体育 NotebookLMの活用</li>
+        <li><span class="n">07</span>2年生 算数 三角形と四角形</li>
+        <li><span class="n">08</span>2年生 国語 言葉のなかまわけ</li>
+        <li><span class="n">09</span>3年生 算数 1けたをかけるかけ算の筆算</li>
+        <li><span class="n">10</span>3年生 社会 まちの様子</li>
+        <li><span class="n">11</span>3年生 社会 わたしたちの市</li>
+        <li><span class="n">12</span>3年生 子どもの学びをAIで可視化し授業に活かす</li>
+        <li><span class="n">13</span>3年生 国語 読解プリントを生成AIで</li>
+        <li><span class="n">14</span>4年生 道徳 ロイロノートで考えを共有・深める</li>
+        <li><span class="n">15</span>5年生 社会 水産業のさかんな地域</li>
+        <li><span class="n">16</span>5年生 国語 和の文化について調べよう</li>
+        <li><span class="n">17</span>5年生 国語 環境問題について報告しよう</li>
+        <li><span class="n">18</span>5年生 理科 物のとけ方</li>
+        <li><span class="n">19</span>5・6年生 総合 見学旅行・キャンプ等でGoogle Workspaceをフル活用する</li>
+        <li><span class="n">20</span>6年生 算数 円の面積</li>
+        <li><span class="n">21</span>6年生 国語 海のいのち</li>
+        <li><span class="n">22</span>6年生 国語 書く力をつけるプリント</li>
+        <li><span class="n">23</span>6年生 社会 明治の新しい国づくり</li>
+        <li><span class="n">24</span>6年生 総合 よりよい社会のために</li>
+        <li><span class="n">25</span>最近取り組んでいること ChromeのAI検索モード</li>
+        <li><span class="n">26</span>学校全体で進めるICT・生成AIの活用戦略</li>
+      </ul>
+    </section>
+
+    <!-- ── 資料2：社会科×生成AI ── -->
+    <section class="doc" id="shakaika">
+      <div class="doc-head">
+        <div class="doc-shot">
+          <img src="../assets/shiryo/thumb_shakaika.png" alt="資料の中面。社会科と生成AIの活用の考え方を5段階で示した図解">
+        </div>
+        <div>
+          <span class="meta">社会科×生成AI ｜ 研究会でお配りしたもの</span>
+          <h2>社会科の授業づくりに、生成AIをどう入れるか</h2>
+          <p>2026年6月、鹿児島県の小学校社会科研究会でお話ししたときの資料です。地域素材の集め方から、作った副読本をデジタル教科書の形にするところまで。そのまま貼って使えるプロンプトの例も入れています。</p>
+          <div class="foot">
+            <a class="btn" href="../assets/shiryo/kenshu-shakaika-seiseiai.pdf" target="_blank" rel="noopener">資料を読む（PDF）</a>
+            <span class="size">2.6MB／8ページ／A4横</span>
+          </div>
+        </div>
+      </div>
+      <p class="toc-head">この資料に書いてあること</p>
+      <ul class="toc">
+        <li><span class="n">01</span>社会科×生成AIとは（使うことを目的にしない）</li>
+        <li><span class="n">02</span>Deep Researchで地域素材に「あたり」をつける</li>
+        <li><span class="n">03</span>自治体・企業の資料を子ども向けに整理する</li>
+        <li><span class="n">04</span>学習に役立つリンクをまとめた単元のサイトを作る</li>
+        <li><span class="n">05</span>作成した副読本をデジタル教科書化する</li>
+        <li><span class="n">06</span>Claude CodeやCodexで見やすい単元計画を立てる</li>
+        <li><span class="n">07</span>授業での活用事例（個別のフィードバック・振り返りの分析）</li>
+        <li><span class="n">08</span>おわりに（効率と、あえての非効率）</li>
+      </ul>
+      <p class="note" style="margin-top:20px;">この回の記録は <a class="tl" href="https://note.com/tozaki_edu/n/n664d3a76011d" target="_blank" rel="noopener">noteの記事 ↗</a> にも書いています。</p>
+    </section>
+
+    <div class="ask">
+      <h2>この内容で、校内研修もお受けしています。</h2>
+      <p>資料をそのまま読み上げる研修にはしていません。学校の困りごとをうかがってから、その場で試す一つを決める形にしています。現役教員のため、所属先の規程と手続きを確認のうえ、お受けできるかも含めてお返事します。</p>
+      <a class="btn" href="../#contact">相談・連携について見る</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fc">本サイトは個人の活動として運営しており、所属する学校・自治体の公式見解を示すものではありません。<br>© LiFE with（外﨑顯博）</div>
+  </div>
+</footer>
+
+</body>
+</html>

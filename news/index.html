@@ -22,8 +22,7 @@
         -webkit-font-smoothing:antialiased; }
   img{ max-width:100%; display:block; }
   .wrap{ max-width:var(--max); margin:0 auto; padding:0 24px; }
-  header{ position:sticky; top:0; z-index:100; background:rgba(255,255,255,.93);
-          backdrop-filter:blur(6px); border-bottom:1px solid rgba(231,233,236,.9); }
+  header{ position:sticky; top:0; z-index:100; background:#fff; border-bottom:1px solid var(--line); }
   .hd{ max-width:var(--max); margin:0 auto; padding:0 24px; height:70px;
        display:flex; align-items:center; justify-content:space-between; gap:14px; }
   .brand img{ height:48px; width:auto; }
@@ -54,6 +53,12 @@
   @media (max-width:900px){
     .nw{ flex-wrap:wrap; gap:8px 14px; }
     .nw .t{ flex-basis:100%; order:3; }
+  }
+  @media (max-width:600px){
+    body{ font-size:16.5px; }
+    .hd{ height:58px; padding:0 20px; }
+    .brand img{ height:40px; }
+    h1{ font-size:26px; }
   }
 </style>
 </head>
