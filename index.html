@@ -81,6 +81,18 @@
   nav.g a:hover{ color:var(--ink); }
   nav.g .btn{ padding:10px 24px; font-size:14px; }
   nav.g a.btn-ai{ color:#fff; }
+  nav.g .m-cta{ display:none; }
+  /* ハンバーガー（〜900pxで出現・開くとバツに） */
+  .menu-btn{ display:none; width:44px; height:44px; border:none; background:none;
+             cursor:pointer; position:relative; flex:none; }
+  .menu-btn span{ position:absolute; left:10px; right:10px; height:2.4px; border-radius:2px;
+                  background:var(--ink); transition:transform .25s ease, opacity .2s ease, top .25s ease; }
+  .menu-btn span:nth-child(1){ top:14px; }
+  .menu-btn span:nth-child(2){ top:21px; }
+  .menu-btn span:nth-child(3){ top:28px; }
+  .menu-btn[aria-expanded="true"] span:nth-child(1){ top:21px; transform:rotate(45deg); }
+  .menu-btn[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+  .menu-btn[aria-expanded="true"] span:nth-child(3){ top:21px; transform:rotate(-45deg); }
 
   /* ヒーロー：1枚ものの水彩の上に題字 */
   .hero{ position:relative; overflow:hidden; }
@@ -213,14 +225,28 @@
   .c-after b{ font-family:"Zen Maru Gothic",sans-serif; font-size:16.5px; color:var(--ai2); }
   .case .note{ margin-top:8px; font-size:12.5px; }
 
-  /* 先生の声 */
-  .voices{ display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:30px; }
-  .vc{ background:#fff; border:1px solid var(--line); border-radius:var(--r); padding:28px 30px; }
-  .vc p{ font-size:15.5px; line-height:1.95; }
-  .vc .who{ display:block; margin-top:12px; font-size:13.5px; color:var(--sub); }
-  .vc.honest{ background:transparent; border-style:dashed; grid-column:1 / -1; }
+  /* 先生の声＝付箋（本人「付箋っぽいやつでかわいく」2026-07-30）。
+     手書きはKlee One（原点の手紙と同じ書体）・テープはマスキングテープ風の淡青 */
+  .voices{ display:grid; grid-template-columns:repeat(2,1fr); gap:30px 26px; margin-top:36px; }
+  .vc{ position:relative; background:#fdf6d2; border:none; border-radius:3px;
+       padding:34px 28px 24px;
+       font-family:"Klee One","Hiragino Kaku Gothic ProN",sans-serif;
+       box-shadow:0 1px 2px rgba(35,39,44,.06), 0 10px 22px rgba(35,39,44,.10);
+       transform:rotate(-1.1deg); }
+  .vc:nth-child(2){ background:var(--sora); transform:rotate(1deg); }
+  .vc:nth-child(3){ background:#fdeef1; transform:rotate(.8deg); }
+  .vc:nth-child(4){ background:#eaf4ea; transform:rotate(-.9deg); }
+  .vc::before{ content:""; position:absolute; top:-11px; left:50%; width:96px; height:24px;
+       transform:translateX(-50%) rotate(-2deg);
+       background:rgba(185,209,232,.55); border-left:1px dashed rgba(255,255,255,.8);
+       border-right:1px dashed rgba(255,255,255,.8); }
+  .vc p{ font-size:16px; line-height:2.05; font-weight:600; color:#3a3e44; }
+  .vc .who{ display:block; margin-top:14px; font-size:13px; color:#6a6f76; text-align:right; }
+  .vc.honest{ background:#fff; border:1.5px dashed var(--mizu); transform:none;
+              grid-column:1 / -1; box-shadow:none; }
   .vc.honest .ans{ margin-top:12px; padding-top:12px; border-top:1px dashed var(--line);
-                   font-size:14.5px; color:#4b5158; }
+                   font-size:14.5px; color:#4b5158;
+                   font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans",sans-serif; }
 
   /* お知らせ＋登壇 */
   .nsgrid{ display:grid; grid-template-columns:1fr 1fr; gap:34px; margin-top:32px; align-items:start; }
@@ -255,8 +281,9 @@
   .docs{ display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:32px; }
   .doc{ background:#fff; border:1px solid var(--line); border-radius:var(--r); overflow:hidden;
         display:flex; flex-direction:column; }
-  .doc .shot{ background:var(--sora2); border-bottom:1px solid var(--line); }
-  .doc .shot img{ width:100%; height:230px; object-fit:cover; object-position:top center; }
+  /* サムネ＝資料の紙面まるごと（A4横）。縦長クロップは廃止（本人「縦長で気持ち悪い」2026-07-30） */
+  .doc .shot{ display:block; background:var(--sora2); border-bottom:1px solid var(--line); }
+  .doc .shot img{ width:100%; height:auto; }
   .doc .bd{ padding:24px 26px 26px; display:flex; flex-direction:column; flex:1; }
   .doc .meta{ font-size:12.5px; letter-spacing:.14em; color:var(--karashi); font-weight:700;
               font-family:"Zen Maru Gothic",sans-serif; }
@@ -329,7 +356,16 @@
   @media (max-width:900px){
     br.pc{ display:none; }
     br.tb{ display:inline; }
-    nav.g a:not(.btn){ display:none; }
+    /* ナビは隠さず、ハンバーガーで開く縦メニューに（本人依頼 2026-07-30） */
+    .menu-btn{ display:block; }
+    nav.g{ position:absolute; top:100%; left:0; right:0; background:#fff;
+           border-bottom:1px solid var(--line); box-shadow:0 16px 26px rgba(35,39,44,.08);
+           flex-direction:column; align-items:stretch; gap:0; padding:6px 0 18px; display:none; }
+    nav.g.open{ display:flex; }
+    nav.g a:not(.btn){ display:block; padding:13px 28px; font-size:16px;
+                       border-top:1px dashed var(--line); }
+    nav.g a:first-child{ border-top:none; }
+    nav.g .m-cta{ display:block; margin:14px 24px 0; text-align:center; font-size:15px; }
     /* 縮めずに折り返す（縮小だと本文より小さい見出しになる） */
     h2{ white-space:normal; font-size:27px; line-height:1.6; }
     .vbig{ white-space:normal; font-size:23px; line-height:1.65; }
@@ -397,7 +433,7 @@
     <a class="brand" href="./" aria-label="LiFE with トップへ">
       <img class="logo-img" src="assets/logo.png" alt="LiFE with ── ゆとりをもって人を育てる社会へ">
     </a>
-    <nav class="g">
+    <nav class="g" id="gnav" aria-label="サイト内メニュー">
       <a href="#about">LiFE withについて</a>
       <a href="#work">取り組み</a>
       <a href="#shiryo">研修資料</a>
@@ -405,7 +441,11 @@
       <a href="#voice">先生の声</a>
       <a href="#news">お知らせ</a>
       <a href="#profile">プロフィール</a>
+      <a class="btn btn-ai m-cta" href="#contact">相談・連携する</a>
     </nav>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="gnav" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
@@ -898,6 +938,24 @@
         '<small>' + r.s + '</small></span><span class="tag ' + (r.done ? 't-fact">実施済み' : 't-plan">予定') + '</span></div>';
     }).join('');
   }
+})();
+
+/* ハンバーガーメニュー（〜900px） */
+(function(){
+  var btn = document.getElementById('menu-btn');
+  var nav = document.getElementById('gnav');
+  if (!btn || !nav) return;
+  function close(){ nav.classList.remove('open'); btn.setAttribute('aria-expanded','false');
+                    btn.setAttribute('aria-label','メニューを開く'); }
+  btn.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+  });
+  nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
+  document.addEventListener('click', function(e){
+    if (nav.classList.contains('open') && !nav.contains(e.target) && !btn.contains(e.target)) close();
+  });
 })();
 
 /* スクロール表示 */
