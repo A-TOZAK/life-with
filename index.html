@@ -97,7 +97,8 @@
   /* ヒーロー：1枚ものの水彩の上に題字 */
   .hero{ position:relative; overflow:hidden; }
   .hero-art{ position:relative; max-width:1500px; margin:0 auto; }
-  .hero-art img{ width:100%;
+  /* height:auto必須：imgのheight属性(1024)が残ると、スマホ幅で縦に引き伸ばされる（2026-07-30実機で発覚） */
+  .hero-art img{ width:100%; height:auto;
     -webkit-mask-image:linear-gradient(#000 82%, transparent 100%);
     mask-image:linear-gradient(#000 82%, transparent 100%); }
   .hero-ov{ position:absolute; inset:0; display:flex; flex-direction:column;
