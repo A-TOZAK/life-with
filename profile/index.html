@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>はじめまして｜外﨑顯博／LiFE with</title>
+<meta name="description" content="新しくお会いした方へ。外﨑顯博（LiFE with）が何をしていて、何を目指しているのか、どんなことでお手伝いできるのかを1枚にまとめました。">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="はじめまして｜外﨑顯博／LiFE with">
+<meta property="og:description" content="何をしている人か、目指していること、お手伝いできること。1枚にまとめました。">
+<meta property="og:image" content="https://a-tozak.github.io/life-with/assets/og.png">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://a-tozak.github.io/life-with/profile/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/logo_icon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#ffffff; --paper2:#f4f5f7; --ink:#2f3236; --sub:#6b7076;
+    --ai:#1866b2; --ai2:#12518f; --sora:#eaf1f9; --sora2:#f2f7fc;
+    --mizu:#b9d1e8; --karashi:#6f94bd; --line:#e7e9ec; --max:900px;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  picture{ display:block; }
+  html{ scroll-behavior:smooth; scroll-padding-top:82px; }
+  body{ font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;
+        color:var(--ink); background:var(--paper); line-height:1.95; font-size:17px;
+        -webkit-font-smoothing:antialiased; overflow-x:clip; }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; }
+  .wrap{ max-width:var(--max); margin:0 auto; padding:0 24px; }
+  header{ position:sticky; top:0; z-index:100; background:#fff; border-bottom:1px solid var(--line); }
+  .hd{ max-width:var(--max); margin:0 auto; padding:0 24px; height:70px;
+       display:flex; align-items:center; justify-content:space-between; gap:14px; }
+  .brand img{ height:48px; width:auto; }
+  .back{ font-size:14.5px; color:#454a50; text-decoration:none; white-space:nowrap; }
+  .back:hover{ color:var(--ink); }
+  main{ padding:60px 0 80px; }
+  .kick{ font-family:"Zen Maru Gothic",sans-serif; font-size:13.5px; letter-spacing:.3em;
+         color:var(--ai); font-weight:700; }
+  .kick::after{ content:""; display:inline-block; width:26px; height:2px; border-radius:2px;
+                background:var(--mizu); vertical-align:middle; margin-left:12px; }
+  h1{ font-family:"Zen Maru Gothic",sans-serif; font-weight:700;
+      font-size:clamp(26px,3.4vw,36px); letter-spacing:.04em; line-height:1.65; margin-top:4px; }
+  .lead{ color:#454a50; margin-top:16px; font-size:16.5px; }
+  .note{ font-size:13.5px; color:var(--sub); line-height:1.9; }
+  .tl{ color:var(--ai); font-weight:600; text-decoration:none;
+       border-bottom:1px solid rgba(42,91,143,.45); }
+  .tl:hover{ opacity:.75; }
+  .btn{ display:inline-block; text-decoration:none; font-size:16px; font-weight:700;
+        font-family:"Zen Maru Gothic",sans-serif; letter-spacing:.06em;
+        padding:14px 32px; border-radius:999px; background:var(--ai); color:#fff; }
+  .btn:hover{ background:var(--ai2); }
+  .btn-line{ background:#fff; color:var(--ai); border:1.5px solid var(--mizu); }
+  .btn-line:hover{ background:var(--sora2); }
+
+  /* 名刺ブロック */
+  .card-me{ margin-top:34px; background:var(--sora2); border-radius:22px;
+            padding:30px 34px; display:grid; grid-template-columns:120px 1fr; gap:26px; align-items:center; }
+  .card-me .ph img{ width:120px; height:120px; object-fit:cover; border-radius:50%; }
+  .pn{ font-family:"Zen Maru Gothic",sans-serif; font-weight:700; font-size:23px; letter-spacing:.05em; }
+  .pn small{ font-size:14px; font-weight:500; color:var(--sub); margin-left:10px; letter-spacing:.08em; }
+  .pr{ font-size:15px; color:#454a50; margin-top:6px; }
+
+  section.blk{ margin-top:52px; border-top:1px solid var(--line); padding-top:40px; }
+  h2{ font-family:"Zen Maru Gothic",sans-serif; font-weight:700;
+      font-size:clamp(21px,2.4vw,27px); letter-spacing:.03em; line-height:1.65; }
+  .blk p{ margin-top:14px; font-size:16.5px; color:#454a50; }
+  .blk p b{ color:var(--ink); }
+
+  /* できること */
+  .cards{ display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:24px; }
+  .c{ border:1px solid var(--line); border-radius:18px; padding:24px 26px; background:#fff; }
+  .c .n{ font-family:"Zen Maru Gothic",sans-serif; font-size:12.5px; letter-spacing:.16em;
+         color:var(--karashi); font-weight:700; }
+  .c h3{ font-family:"Zen Maru Gothic",sans-serif; font-weight:700; font-size:18px;
+         letter-spacing:.03em; margin:6px 0 10px; line-height:1.6; }
+  .c p{ font-size:15.5px; color:#454a50; margin:0; }
+
+  /* 数字 */
+  .nums{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:24px; }
+  .num{ background:var(--paper2); border-radius:16px; padding:20px 20px 22px; }
+  .num .v{ font-family:"Zen Maru Gothic",sans-serif; font-weight:700; font-size:27px;
+           color:var(--ai); letter-spacing:.02em; line-height:1.3; }
+  .num .v small{ font-size:14px; margin-left:2px; }
+  .num .t{ font-size:13.5px; color:#4b5158; line-height:1.8; margin-top:4px; }
+
+  /* この夏の研修・登壇 */
+  .toc-head{ font-family:"Zen Maru Gothic",sans-serif; font-weight:700; font-size:16px;
+             margin:32px 0 0; letter-spacing:.06em; }
+  .sum{ list-style:none; margin-top:12px; }
+  .sum li{ font-size:15.5px; color:#454a50; line-height:1.9; padding:10px 0;
+           border-top:1px dashed var(--line); display:flex; gap:12px; align-items:baseline; }
+  .sum li b{ color:var(--ink); }
+  .sum .lb{ flex:0 0 auto; font-family:"Zen Maru Gothic",sans-serif; font-size:12px; font-weight:700;
+            letter-spacing:.12em; color:var(--ai); background:var(--sora); border-radius:999px;
+            padding:3px 12px; }
+
+  /* 声かけ */
+  .callto{ margin-top:26px; border:1.5px solid var(--mizu); border-radius:20px; padding:26px 30px; }
+  .callto h3{ font-family:"Zen Maru Gothic",sans-serif; font-weight:700; font-size:18px;
+              letter-spacing:.03em; margin-bottom:12px; }
+  .callto ul{ list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:6px 26px; }
+  .callto li{ font-size:15.5px; color:#454a50; padding-left:20px; position:relative; }
+  .callto li::before{ content:""; position:absolute; left:0; top:12px;
+                      width:8px; height:8px; border-radius:50%; background:var(--mizu); }
+
+  .ask{ margin-top:60px; background:var(--sora2); border-radius:22px; padding:38px 40px; }
+  .ask h2{ font-size:21px; }
+  .ask p{ font-size:15.5px; color:#454a50; margin-top:10px; }
+  .btns{ margin-top:22px; display:flex; gap:14px; flex-wrap:wrap; }
+
+  footer{ padding:36px 0 40px; }
+  .fc{ font-size:12.5px; color:var(--sub); border-top:1px solid var(--line);
+       padding-top:24px; line-height:1.9; }
+
+  @media (max-width:760px){
+    .cards{ grid-template-columns:1fr; }
+    .nums{ grid-template-columns:1fr 1fr; }
+    .callto ul{ grid-template-columns:1fr; }
+    .card-me{ grid-template-columns:1fr; text-align:center; justify-items:center; padding:28px 24px; }
+    .card-me .ph img{ width:104px; height:104px; }
+  }
+  @media (max-width:600px){
+    html{ scroll-padding-top:68px; }
+    body{ font-size:16.5px; }
+    .hd{ height:58px; padding:0 20px; }
+    .brand img{ height:40px; }
+    main{ padding:44px 0 64px; }
+    .ask,.callto{ padding:28px 24px; border-radius:18px; }
+    .c{ padding:22px 22px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hd">
+    <a class="brand" href="../" aria-label="LiFE with トップへ">
+      <img src="../assets/logo.png" alt="LiFE with">
+    </a>
+    <a class="back" href="../">← トップへ戻る</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <span class="kick">Profile</span>
+    <h1>はじめまして。外﨑顯博と申します。</h1>
+    <p class="lead">お会いした方に、私が何をしていて、何を目指しているのか、どんなことでお手伝いできるのかをまとめました。読むのに3分ほどです。同じ内容をA4・1枚のPDFにもしていますので、印刷して手元に置いていただいても構いません。</p>
+
+    <div class="card-me">
+      <div class="ph"><img src="../assets/author.jpg" alt="外﨑顯博の写真"></div>
+      <div>
+        <div class="pn">外﨑 顯博<small>とざき あきひろ</small></div>
+        <p class="pr">福岡県飯塚市・公立小学校教員（ICT教育担当／研究主任）<br>GEG Chikuho 共同リーダー ／ LiFE with（2027年4月 開業予定）</p>
+      </div>
+    </div>
+
+    <section class="blk">
+      <h2>何をしている人か</h2>
+      <p>いまも教室で授業をしている現役の教員です。そのかたわらで、5年以上、先生方に向けてICTと生成AIの研修や伴走支援、教材づくりの手伝いをしてきました。大事にしているのは、<b>道具を配って終わりにしないこと</b>です。入れただけの道具は、2学期には使われなくなります。だから、その学校のやり方に合わせて一緒に組み立て、使えるようになるまで付き合うところを仕事にしています。</p>
+    </section>
+
+    <section class="blk">
+      <h2>目指していること</h2>
+      <p>ゆとりをもって人を育てる社会をつくりたいと思っています。育てたいのは子どもだけではありません。先生も、親も、地域の人も、会社で働く人も、誰もが育てる側であると同時に、育ててもらう側です。ゆとりは3つあります。気持ちのゆとり、時間のゆとり、お金のゆとり。<b>人手が足りないままでも回るしくみをつくり、そこで空いた分を人を育てることに使う。</b>これは学校だけの話ではなく、人が足りないまま踏ん張っている会社でも同じだと思っています。</p>
+    </section>
+
+    <section class="blk">
+      <h2>お手伝いできること</h2>
+      <div class="cards">
+        <div class="c">
+          <span class="n">01</span>
+          <h3>先生向けの研修</h3>
+          <p>ICT・生成AIの校内研修。事例を幅で見せて、明日の教室で試せる形にして持ち帰ってもらいます。中身はすべてWebページに残すので、翌日から手順に戻れます。</p>
+        </div>
+        <div class="c">
+          <span class="n">02</span>
+          <h3>学校・教育委員会の働き方改革</h3>
+          <p>校務のAI化、在校時間の測定から報告書まで。計画を書くだけでなく、私が授業を受け持って、先生が手を動かせる時間をその場で作るところまでやります。</p>
+        </div>
+        <div class="c">
+          <span class="n">03</span>
+          <h3>会社・団体のDX顧問</h3>
+          <p>月1〜2回うかがって、生成AIの入口づくりと社内での定着を進めます。社員研修、業務の見直し、自作の小さな仕組みづくりまで。</p>
+        </div>
+        <div class="c">
+          <span class="n">04</span>
+          <h3>教材づくり・教材の監修</h3>
+          <p>学校向けの教材、出前授業、教育コンテンツを「教室で本当に使える形」に整えます。現場の先生の目で見て直すのが役割です。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="blk">
+      <h2>いまある土台</h2>
+      <div class="nums">
+        <div class="num">
+          <div class="v">7<small>件</small></div>
+          <div class="t">この夏の研修・登壇（2026年7〜8月）</div>
+        </div>
+        <div class="num">
+          <div class="v">194<small>名</small></div>
+          <div class="t">GEG Chikuho（Google Educator Group 筑豊）。5年目の先生のつながり（2026年8月時点）</div>
+        </div>
+        <div class="num">
+          <div class="v">1,300<small>枚超</small></div>
+          <div class="t">無料教材「School Stock」。登録不要でずっと無料</div>
+        </div>
+        <div class="num">
+          <div class="v">10<small>年</small></div>
+          <div class="t">小学校の教室に立ってきた年数。いまも担任として授業をしています</div>
+        </div>
+      </div>
+
+      <p class="toc-head">この夏の研修・登壇</p>
+      <ul class="sum">
+        <li><span class="lb">研修</span>校内研修の講師　<b>4件</b>（ICT・生成AIの活用）</li>
+        <li><span class="lb">登壇</span>教育イベント　<b>1件</b></li>
+        <li><span class="lb">登壇</span>ミカサ商事の教育イベント</li>
+        <li><span class="lb">登壇</span>Google for Education 渋谷オフィスで開かれる、生成AIの活用アイデアの発表会</li>
+      </ul>
+
+      <p class="note" style="margin-top:18px;">ふだんも週に2件以上、同僚や近隣の先生からICT・生成AI・研究についての相談を受けています。このほか、Geminiアイデアソン2026 優勝、鹿児島県の小学校社会科研究会・熊本GEG九州などで登壇しました。研修でお配りしている資料は <a class="tl" href="../shiryo/">こちらに全部置いています</a>。</p>
+    </section>
+
+    <section class="blk">
+      <h2>こんなときに声をかけてください</h2>
+      <div class="callto">
+        <h3>お役に立てそうな場面</h3>
+        <ul>
+          <li>校内研修の講師を探している学校・教育委員会</li>
+          <li>人手が足りない中でAIを使ってみたい会社</li>
+          <li>学校向けの教材や出前授業をつくっている企業</li>
+          <li>社員研修でAIの入口づくりに困っている方</li>
+        </ul>
+      </div>
+      <p class="note" style="margin-top:16px;">現役教員のため、所属先の規程と手続きを確認のうえ、お受けできるかも含めてお返事します。時期によってはお時間をいただくことがあります。</p>
+    </section>
+
+    <div class="ask">
+      <h2>1枚のPDFと、ご相談の窓口</h2>
+      <p>このページと同じ内容をA4・1枚にまとめたものです。印刷して、そのままお使いいただけます。ご相談は下のフォームからどうぞ。</p>
+      <div class="btns">
+        <a class="btn" href="../assets/profile/lifewith-profile.pdf" target="_blank" rel="noopener">1枚プロフィールを見る（PDF）</a>
+        <a class="btn btn-line" href="../#contact">相談・連携について</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fc">本サイトは個人の活動として運営しており、所属する学校・自治体の公式見解を示すものではありません。<br>© LiFE with（外﨑顯博）</div>
+  </div>
+</footer>
+
+</body>
+</html>
