@@ -269,6 +269,7 @@
   .sc .d{ font-family:"Zen Maru Gothic",sans-serif; font-weight:700; font-size:17px; min-width:52px; }
   .sc .t{ flex:1; font-size:14.5px; }
   .sc .t small{ display:block; font-size:12.5px; color:var(--sub); }
+  .sc .sc-link{ margin-left:8px; font-size:12.5px; white-space:nowrap; }
 
   /* 読みもの（note・X） */
   .embed-grid{ display:grid; grid-template-columns:1fr 1fr; gap:34px; margin-top:30px; align-items:start; }
@@ -944,8 +945,14 @@
   var sc = document.getElementById('sched');
   if (sc && window.LW_SCHEDULE) {
     sc.innerHTML = window.LW_SCHEDULE.map(function(r){
+      var link = r.href
+        ? '<a class="tl sc-link" href="' + r.href + '"' +
+          (r.href.indexOf('http')===0 ? ' target="_blank" rel="noopener"' : '') + '>' +
+          (r.hrefLabel || 'くわしく') + (r.href.indexOf('http')===0 ? ' ↗' : ' →') + '</a>'
+        : '';
       return '<div class="sc"><span class="d">' + r.d + '</span><span class="t">' + r.t +
-        '<small>' + r.s + '</small></span><span class="tag ' + (r.done ? 't-fact">実施済み' : 't-plan">予定') + '</span></div>';
+        '<small>' + r.s + link + '</small></span><span class="tag ' +
+        (r.done ? 't-fact">実施済み' : 't-plan">予定') + '</span></div>';
     }).join('');
   }
 })();

@@ -17,10 +17,10 @@ window.LW_NEWS = [
 ];
 
 window.LW_SCHEDULE = [
-  { d: "7.22", t: "校内研修（福岡県内の小学校）", s: "ICT活用事例の共有。うまくいかなかった事例も隠さず共有", done: true },
-  { d: "7.28", t: "校内研修（福岡県内の小学校）", s: "生成AI・Google Workspaceの活用。受講者アンケート11件・満足度9.5／10", done: true },
-  { d: "7.30", t: "企業セミナー登壇（福岡）", s: "ミカサ商事「先生の課題を今すぐ解決！Gemini で校務&授業大改革セミナー」に、導入校の立場で登壇", done: true },
-  { d: "8.1",  t: "EDUCROSS in 北九州 2026", s: "実行委員会の代表として企画・運営（生成AI × 授業づくり × 組織づくり）", done: true },
-  { d: "8.7",  t: "Gemini for Education アイデアソン 2026 Showcase（東京）", s: "最終発表会で、生成AIの教育活用アイデアを発表" },
-  { d: "8.10", t: "校内研修（大分県の中学校）", s: "生成AI活用の校内研修" }
+  { d: "7.22", t: "校内研修（福岡県内の小学校）", s: "ICT活用事例の共有。うまくいかなかった事例も隠さず共有", done: true, href: "shiryo/", hrefLabel: "配った資料" },
+  { d: "7.28", t: "校内研修（福岡県内の小学校）", s: "生成AI・Google Workspaceの活用。受講者アンケート11件・満足度9.5／10", done: true, href: "shiryo/", hrefLabel: "配った資料" },
+  { d: "7.30", t: "企業セミナー登壇（福岡）", s: "ミカサ商事「先生の課題を今すぐ解決！Gemini で校務&授業大改革セミナー」に、導入校の立場で登壇", done: true, href: "https://www.mikasa.ne.jp/gemini_school-upd-2026/", hrefLabel: "セミナーの案内" },
+  { d: "8.1",  t: "EDUCROSS in 北九州 2026", s: "実行委員会の代表として企画・運営（生成AI × 授業づくり × 組織づくり）", done: true, href: "https://a-tozak.github.io/educross-day/", hrefLabel: "当日のプログラムと資料" },
+  { d: "8.7",  t: "Gemini for Education アイデアソン 2026 Showcase（東京）", s: "最終発表会で、生成AIの教育活用アイデアを発表", href: "https://rsvp.withgoogle.com/events/gemini-ideathon2026_showcase", hrefLabel: "発表会の案内" },
+  { d: "8.10", t: "校内研修（大分県の中学校）", s: "生成AI活用の校内研修", href: "shiryo/", hrefLabel: "配っている資料" }
 ];
