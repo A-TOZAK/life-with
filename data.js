@@ -6,6 +6,7 @@
    ============================================================ */
 
 window.LW_NEWS = [
+  { d: "2026.08.10", tag: "研修", t: "大分県の義務教育学校（1〜9年生）で生成AIの研修を行いました。当日のサイトと、その場でつくった「テスト勉強プランナー」を公開しています", href: "https://a-tozak.github.io/sekiden-kenshu/" },
   { d: "2026.08.07", tag: "登壇", t: "Gemini for Education アイデアソン 2026 Showcase（東京）の最終発表会で発表しました。発表したサイト「Gemini アイデア村」は、コピーして使える形で公開しています", href: "https://sites.google.com/view/gemini-tozaki/home" },
   { d: "2026.08.01", tag: "イベント", t: "EDUCROSS in 北九州 2026 を開催しました（生成AI × 授業づくり × 組織づくり／当日の資料はこちら）", href: "https://a-tozak.github.io/educross-day/" },
   { d: "2026.07.30", tag: "登壇", t: "ミカサ商事のセミナー「先生の課題を今すぐ解決！Gemini で校務&授業大改革」に、導入校の立場で登壇しました", href: "https://www.mikasa.ne.jp/gemini_school-upd-2026/" },
@@ -23,5 +24,5 @@ window.LW_SCHEDULE = [
   { d: "7.30", t: "企業セミナー登壇（福岡）", s: "ミカサ商事「先生の課題を今すぐ解決！Gemini で校務&授業大改革セミナー」に、導入校の立場で登壇", done: true, href: "https://www.mikasa.ne.jp/gemini_school-upd-2026/", hrefLabel: "セミナーの案内" },
   { d: "8.1",  t: "EDUCROSS in 北九州 2026", s: "実行委員会の代表として企画・運営（生成AI × 授業づくり × 組織づくり）", done: true, href: "https://a-tozak.github.io/educross-day/", hrefLabel: "当日のプログラムと資料" },
   { d: "8.7",  t: "Gemini for Education アイデアソン 2026 Showcase（東京）", s: "最終発表会で、生成AIの教育活用アイデアを発表", done: true, href: "https://sites.google.com/view/gemini-tozaki/home", hrefLabel: "発表したサイト「Gemini アイデア村」" },
-  { d: "8.10", t: "校内研修（大分県の中学校）", s: "生成AI活用の校内研修", href: "shiryo/", hrefLabel: "配っている資料" }
+  { d: "8.10", t: "校内研修（大分県の義務教育学校）", s: "生成AIの研修。当日の進め方・配布資料・その場でつくったWebアプリをそのまま公開", done: true, href: "https://a-tozak.github.io/sekiden-kenshu/", hrefLabel: "当日のサイト" }
 ];
