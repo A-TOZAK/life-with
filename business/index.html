@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>企業・団体の方へ｜LiFE with</title>
+<meta name="description" content="現役の小学校教員が、パソコンとAIの「道具の翻訳と定着」を伴走します。見積書・数字管理の道具づくり、生成AI研修、資格勉強の仕組みづくり。福岡・筑豊を中心に、オンラインでも。">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="企業・団体の方へ｜LiFE with">
+<meta property="og:description" content="人手が足りなくても、回る。現役の小学校教員が、道具の翻訳と定着を伴走します。">
+<meta property="og:image" content="https://a-tozak.github.io/life-with/assets/og.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://a-tozak.github.io/life-with/business/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/logo_icon.png" type="image/png">
+<style>
+  :root{
+    --paper:#fff; --ink:#2f3236; --sub:#5c636b;
+    --ai:#1866b2; --ai2:#12518f; --sora:#eaf1f9; --sora2:#f3f7fc;
+    --mizu:#b9d1e8; --line:#e2e7ec; --max:1080px;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; scroll-padding-top:76px; }
+  body{ font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;
+        color:var(--ink); background:var(--paper); line-height:1.9; font-size:15.5px;
+        -webkit-font-smoothing:antialiased; overflow-x:clip; }
+  img{ max-width:100%; height:auto; display:block; }
+  a{ color:inherit; }
+  .wrap{ max-width:var(--max); margin:0 auto; padding:0 28px; }
+
+  /* ヘッダー */
+  header{ position:sticky; top:0; z-index:100; background:rgba(255,255,255,.96);
+          backdrop-filter:blur(6px); border-bottom:1px solid var(--line); }
+  .hd{ max-width:var(--max); margin:0 auto; padding:0 28px; height:66px;
+       display:flex; align-items:center; gap:22px; }
+  .brand{ display:flex; align-items:center; gap:10px; text-decoration:none; margin-right:auto; }
+  .brand img{ height:40px; width:auto; }
+  .brand small{ font-size:11.5px; color:var(--sub); letter-spacing:.08em; border-left:1px solid var(--line); padding-left:10px; }
+  nav.gnav{ display:flex; gap:22px; }
+  nav.gnav a{ font-size:13.5px; font-weight:600; color:#454a50; text-decoration:none; }
+  nav.gnav a:hover{ color:var(--ai); }
+  .hd .btn{ margin-left:4px; }
+
+  .btn{ display:inline-block; text-decoration:none; font-size:14.5px; font-weight:700;
+        letter-spacing:.05em; padding:11px 24px; border-radius:999px;
+        background:var(--ai); color:#fff; border:1.5px solid var(--ai); }
+  .btn:hover{ background:var(--ai2); border-color:var(--ai2); }
+  .btn.ghost{ background:#fff; color:var(--ai); border-color:var(--mizu); }
+  .btn.ghost:hover{ background:var(--sora2); }
+  .btn.big{ font-size:16px; padding:14px 34px; }
+
+  section{ padding:74px 0; }
+  .kick{ font-size:12px; letter-spacing:.28em; color:var(--ai); font-weight:700; }
+  h2{ font-size:clamp(22px,2.6vw,28px); font-weight:700; letter-spacing:.03em;
+      line-height:1.6; margin:6px 0 8px; }
+  .sec-lead{ color:var(--sub); font-size:14.5px; margin-bottom:34px; }
+
+  /* 1. ヒーロー */
+  .hero{ background:linear-gradient(180deg,var(--sora) 0%,var(--sora2) 100%); padding:64px 0 70px; }
+  .hero .wrap{ display:grid; grid-template-columns:1.02fr .98fr; gap:44px; align-items:center; }
+  .hero .kick{ margin-bottom:10px; display:block; }
+  h1{ font-size:clamp(30px,4vw,44px); font-weight:800; letter-spacing:.03em; line-height:1.5; }
+  .hero p.lead{ margin:16px 0 6px; color:#454a50; font-size:15.5px; }
+  .hero .nums{ display:flex; gap:10px; margin:18px 0 24px; flex-wrap:wrap; }
+  .hero .num{ background:#fff; border:1px solid var(--line); border-radius:12px;
+              padding:10px 16px 12px; min-width:118px; }
+  .hero .num b{ font-size:26px; color:var(--ai); letter-spacing:.02em; }
+  .hero .num b small{ font-size:13px; margin-left:1px; }
+  .hero .num span{ display:block; font-size:11.5px; color:var(--sub); line-height:1.6; margin-top:2px; }
+  .cta{ display:flex; gap:12px; flex-wrap:wrap; }
+
+  .shots{ position:relative; min-width:0; }
+  .shot{ background:#fff; border:1px solid #d8dee5; border-radius:12px; overflow:hidden;
+         box-shadow:0 18px 40px -18px rgba(24,52,90,.28); }
+  .shot .bar{ height:26px; background:#f1f4f8; border-bottom:1px solid var(--line);
+              display:flex; align-items:center; gap:5px; padding:0 12px; }
+  .shot .bar i{ width:8px; height:8px; border-radius:50%; background:#cfd8e2; }
+  .shot.back{ position:absolute; right:-6px; top:-26px; width:62%; transform:rotate(2.4deg); z-index:0; }
+  .shot.front{ position:relative; width:86%; z-index:1; }
+  .shot-note{ margin-top:14px; font-size:12px; color:var(--sub); }
+
+  /* 2. 実物の壁 */
+  .wall{ background:#fff; }
+  .wall-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+  .w-card{ border:1px solid var(--line); border-radius:12px; overflow:hidden; text-decoration:none;
+           background:#fff; transition:box-shadow .15s ease; min-width:0; }
+  .w-card:hover{ box-shadow:0 10px 26px -14px rgba(24,52,90,.35); }
+  .w-card .th{ border-bottom:1px solid var(--line); aspect-ratio:4/3; overflow:hidden; }
+  .w-card .th img{ width:100%; height:100%; object-fit:cover; object-position:top; }
+  .w-card .tx{ padding:12px 14px 14px; }
+  .w-card .tx b{ font-size:14px; }
+  .w-card .tx b span{ color:var(--ai); font-weight:700; }
+  .w-card .tx p{ font-size:12px; color:var(--sub); line-height:1.7; margin-top:3px; }
+
+  /* 3. こんなときに */
+  .empathy{ background:var(--sora2); }
+  .emp-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .emp{ background:#fff; border:1px solid var(--line); border-radius:12px; padding:22px 24px; min-width:0; }
+  .emp svg{ width:26px; height:26px; margin-bottom:10px; }
+  .emp p{ font-size:15px; font-weight:600; line-height:1.85; }
+
+  /* 4. できること */
+  .svc-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+  .svc{ border:1px solid var(--line); border-radius:12px; padding:24px 26px; display:flex; gap:16px; min-width:0; }
+  .svc svg{ flex:0 0 34px; width:34px; height:34px; margin-top:3px; }
+  .svc h3{ font-size:17px; font-weight:700; margin-bottom:4px; }
+  .svc p{ font-size:13.5px; color:var(--sub); line-height:1.85; }
+  .svc a{ color:var(--ai); font-weight:600; text-decoration:none; border-bottom:1px solid var(--mizu); }
+
+  /* 5. 事例 */
+  .cases{ background:var(--sora); }
+  .case{ background:#fff; border:1px solid var(--line); border-radius:14px;
+         padding:28px 30px; margin-top:20px; }
+  .case:first-of-type{ margin-top:0; }
+  .case h3{ font-size:19px; font-weight:700; margin-bottom:10px; }
+  .meta{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px; }
+  .meta span{ font-size:12px; font-weight:600; color:var(--ai2); background:var(--sora);
+              border-radius:999px; padding:3px 12px; }
+  .case-grid{ display:grid; grid-template-columns:1fr 300px; gap:26px; align-items:start; }
+  .case dl{ min-width:0; }
+  .case dt{ font-size:12.5px; font-weight:700; color:var(--ai); letter-spacing:.06em; margin-top:12px; }
+  .case dt:first-child{ margin-top:0; }
+  .case dd{ font-size:14.5px; color:#454a50; line-height:1.9; }
+  .case dd b{ color:var(--ink); }
+  .case figure{ min-width:0; margin:0; }
+  .case figure img{ border:1px solid var(--line); border-radius:10px; width:100%; }
+  .case figcaption{ font-size:11.5px; color:var(--sub); margin-top:6px; }
+  .case-note{ font-size:12.5px; color:var(--sub); margin-bottom:18px; }
+
+  /* 6. 進め方 + FAQ */
+  .flow-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-bottom:56px; }
+  .step{ border:1px solid var(--line); border-radius:12px; padding:22px 24px; position:relative; min-width:0; }
+  .step i{ display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px;
+           border-radius:50%; background:var(--ai); color:#fff; font-style:normal; font-weight:700; margin-bottom:10px; }
+  .step b{ display:block; font-size:16px; }
+  .step p{ font-size:13px; color:var(--sub); margin-top:4px; }
+  .faq details{ border-bottom:1px solid var(--line); }
+  .faq details:first-of-type{ border-top:1px solid var(--line); }
+  .faq summary{ cursor:pointer; list-style:none; display:flex; gap:14px; align-items:baseline;
+                padding:18px 6px; font-size:15.5px; font-weight:700; }
+  .faq summary::-webkit-details-marker{ display:none; }
+  .faq summary::before{ content:"Q"; color:var(--ai); font-weight:800; }
+  .faq summary::after{ content:"＋"; margin-left:auto; color:var(--ai); font-weight:400; }
+  .faq details[open] summary::after{ content:"−"; }
+  .faq .a{ display:flex; gap:14px; padding:0 6px 20px; color:#454a50; font-size:14.5px; line-height:1.95; }
+  .faq .a::before{ content:"A"; color:var(--sub); font-weight:800; }
+
+  /* 7. 人 */
+  .who{ background:var(--sora2); }
+  .who-card{ background:#fff; border:1px solid var(--line); border-radius:14px;
+             padding:30px 34px; display:grid; grid-template-columns:112px 1fr; gap:26px; align-items:start; }
+  .who-card img{ width:112px; height:112px; object-fit:cover; border-radius:50%; }
+  .who-card .nm{ font-size:20px; font-weight:800; }
+  .who-card .nm small{ font-size:12.5px; font-weight:500; color:var(--sub); margin-left:10px; }
+  .who-card .rl{ font-size:13px; color:var(--sub); margin:2px 0 10px; }
+  .who-card p.bio{ font-size:14.5px; color:#454a50; line-height:1.95; }
+  .chips{ display:flex; gap:6px 8px; flex-wrap:wrap; margin:14px 0 10px; }
+  .chips span{ font-size:11.5px; color:#454a50; background:var(--sora2); border:1px solid var(--line);
+               border-radius:999px; padding:3px 11px; white-space:nowrap; }
+  .who-card a.more{ font-size:13.5px; color:var(--ai); font-weight:700; text-decoration:none;
+                    border-bottom:1px solid rgba(24,102,178,.4); }
+
+  /* 8. 相談 */
+  .contact{ background:var(--ai); color:#fff; }
+  .contact .kick{ color:#cfe0f2; }
+  .contact h2{ color:#fff; }
+  .contact p{ color:#e4edf7; font-size:14.5px; }
+  .contact .btn{ background:#fff; color:var(--ai); border-color:#fff; margin-top:22px; }
+  .contact .btn:hover{ background:var(--sora); }
+  .contact .mail{ margin-top:14px; font-size:13px; color:#cfe0f2; }
+  .contact .mail a{ color:#fff; overflow-wrap:anywhere; }
+
+  footer{ background:#fff; border-top:1px solid var(--line); padding:44px 0 40px; }
+  .fgrid{ display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:30px; }
+  .fgrid img{ height:36px; width:auto; margin-bottom:10px; }
+  .fgrid p{ font-size:12.5px; color:var(--sub); line-height:1.9; }
+  .fgrid b{ display:block; font-size:12px; letter-spacing:.18em; color:var(--ai); margin-bottom:10px; }
+  .fgrid ul{ list-style:none; }
+  .fgrid li{ padding:3px 0; }
+  .fgrid li a{ font-size:13.5px; color:#454a50; text-decoration:none; }
+  .fgrid li a:hover{ color:var(--ai); }
+  .legal{ border-top:1px solid var(--line); margin-top:30px; padding-top:20px;
+          font-size:11.5px; color:var(--sub); line-height:1.9; }
+
+  @media (max-width:900px){
+    nav.gnav{ display:none; }
+    .hero .wrap{ grid-template-columns:1fr; gap:36px; }
+    .shots{ margin:0 auto; max-width:520px; width:100%; }
+    .wall-grid, .emp-grid, .flow-grid{ grid-template-columns:1fr 1fr; }
+    .svc-grid{ grid-template-columns:1fr; }
+    .case-grid{ grid-template-columns:1fr; }
+    .case figure{ max-width:420px; }
+  }
+  @media (max-width:600px){
+    html{ scroll-padding-top:64px; }
+    section{ padding:56px 0; }
+    .hd{ height:58px; padding:0 20px; }
+    .brand img{ height:34px; } .brand small{ display:none; }
+    .wrap{ padding:0 20px; }
+    .wall-grid, .emp-grid, .flow-grid{ grid-template-columns:1fr; }
+    .hero{ padding:44px 0 54px; }
+    .hero .num{ flex:1 1 40%; min-width:0; }
+    .who-card{ grid-template-columns:1fr; justify-items:center; text-align:center; }
+    .chips{ justify-content:center; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hd">
+    <a class="brand" href="../"><img src="../assets/logo.png" alt="LiFE with"><small>企業・団体の方へ</small></a>
+    <nav class="gnav" aria-label="ページ内">
+      <a href="#service">できること</a>
+      <a href="#case">事例</a>
+      <a href="#faq">よくある質問</a>
+      <a href="#who">プロフィール</a>
+    </nav>
+    <a class="btn" href="#contact">相談する</a>
+  </div>
+</header>
+
+<!-- 1. ヒーロー -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="kick">FOR BUSINESS</span>
+      <h1>人手が足りなくても、<br>回る。</h1>
+      <p class="lead">現役の小学校教員が、パソコンとAIの「道具の翻訳と定着」を伴走します。むずかしい言葉を使わずに、現場のやり方に合わせて、使えるようになるまで。</p>
+      <div class="nums">
+        <div class="num"><b>10<small>年</small></b><span>現場に立っている</span></div>
+        <div class="num"><b>7<small>件</small></b><span>この夏の研修・登壇</span></div>
+        <div class="num"><b>1,300<small>枚</small></b><span>自作の無料教材</span></div>
+      </div>
+      <div class="cta">
+        <a class="btn big" href="#contact">相談する</a>
+        <a class="btn big ghost" href="#case">事例を見る</a>
+      </div>
+    </div>
+    <div class="shots">
+      <div class="shot back" aria-hidden="true">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="img/shot_tateiwa.webp" alt="" width="1000" height="750" loading="lazy">
+      </div>
+      <div class="shot front">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <img src="img/shot_schoolstock.webp" alt="自作の無料教材の棚「School Stock」の画面" width="1000" height="750">
+      </div>
+      <p class="shot-note">画面は実際に公開しているもの（無料教材の棚・研修サイト）</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2. 実物の壁 -->
+<section class="wall">
+  <div class="wrap">
+    <span class="kick">WORKS</span>
+    <h2>作ったものは、ぜんぶ公開しています。</h2>
+    <p class="sec-lead">言葉より先に、実物を見てください。すべてクリックでそのまま開きます。</p>
+    <div class="wall-grid">
+      <a class="w-card" href="https://a-tozak.github.io/School_Stock/" target="_blank" rel="noopener">
+        <div class="th"><img src="img/shot_schoolstock.webp" alt="" width="1000" height="750" loading="lazy"></div>
+        <div class="tx"><b>School Stock <span>↗</span></b><p>自作教材1,300枚超の無料の棚。登録不要</p></div>
+      </a>
+      <a class="w-card" href="https://a-tozak.github.io/life-with/shiryo/" target="_blank" rel="noopener">
+        <div class="th"><img src="img/shot_shiryo.webp" alt="" width="1000" height="750" loading="lazy"></div>
+        <div class="tx"><b>研修資料 <span>↗</span></b><p>研修でお配りしている資料を全ページ公開</p></div>
+      </a>
+      <a class="w-card" href="https://a-tozak.github.io/jugyo-planner/" target="_blank" rel="noopener">
+        <div class="th"><img src="img/shot_planner.webp" alt="" width="1000" height="750" loading="lazy"></div>
+        <div class="tx"><b>授業プランナー <span>↗</span></b><p>AIエージェントで学期の見通しを組む実演</p></div>
+      </a>
+      <a class="w-card" href="https://a-tozak.github.io/reboot-print/" target="_blank" rel="noopener">
+        <div class="th"><img src="img/shot_reboot.webp" alt="" width="1000" height="750" loading="lazy"></div>
+        <div class="tx"><b>高校リブートプリント <span>↗</span></b><p>学び直しから始める高校全教科の無料プリント</p></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 3. こんなときに -->
+<section class="empathy">
+  <div class="wrap">
+    <span class="kick">EMPATHY</span>
+    <h2>こんなとき、ありませんか。</h2>
+    <p class="sec-lead">ひとつでも当てはまったら、お手伝いできる可能性が高いです。</p>
+    <div class="emp-grid">
+      <div class="emp">
+        <svg viewBox="0 0 26 26" fill="none" stroke="#1866b2" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="20" height="20" rx="5"/><path d="M8 13.5l3.5 3.5L18.5 10"/></svg>
+        <p>見積書や書類づくりが、現場仕事のあとの残業になっている</p>
+      </div>
+      <div class="emp">
+        <svg viewBox="0 0 26 26" fill="none" stroke="#1866b2" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="20" height="20" rx="5"/><path d="M8 13.5l3.5 3.5L18.5 10"/></svg>
+        <p>AIやパソコンを入れたけれど、使われないまま置いてある</p>
+      </div>
+      <div class="emp">
+        <svg viewBox="0 0 26 26" fill="none" stroke="#1866b2" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="20" height="20" rx="5"/><path d="M8 13.5l3.5 3.5L18.5 10"/></svg>
+        <p>研修やDXを、相談できる相手が社内にいない</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. できること -->
+<section id="service">
+  <div class="wrap">
+    <span class="kick">SERVICE</span>
+    <h2>できること</h2>
+    <p class="sec-lead">その会社の1つの業務から。大きな導入はしません。</p>
+    <div class="svc-grid">
+      <div class="svc">
+        <svg viewBox="0 0 34 34" fill="none" stroke="#1866b2" stroke-width="1.8" stroke-linecap="round"><rect x="5" y="4" width="18" height="24" rx="3"/><path d="M10 11h8M10 16h8M10 21h5"/><circle cx="26" cy="24" r="6" fill="#eaf1f9"/><path d="M26 21v6M23 24h6"/></svg>
+        <div><h3>小さな道具づくり</h3><p>見積書・数字管理のかんたんなExcel、書式をそろえるフォーム、必要なら小さなWebアプリ。作って終わりでなく、使えるまで教えます。</p></div>
+      </div>
+      <div class="svc">
+        <svg viewBox="0 0 34 34" fill="none" stroke="#1866b2" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="11" r="5"/><path d="M4 28c1-5 4-8 8-8s7 3 8 8"/><path d="M24 8l1.2 3L28 12l-2.8 1L24 16l-1.2-3L20 12l2.8-1z" fill="#eaf1f9"/></svg>
+        <div><h3>生成AIの入口づくりと定着</h3><p>社内研修と、月1〜2回の顧問。ついていけない気がしている方のところにこそ、横に着きます。</p></div>
+      </div>
+      <div class="svc">
+        <svg viewBox="0 0 34 34" fill="none" stroke="#1866b2" stroke-width="1.8" stroke-linecap="round"><path d="M6 7h16v22H6z"/><path d="M22 7l6 3v22l-6-3"/><path d="M10 13h8M10 18h8M10 23h5"/></svg>
+        <div><h3>大人の学びの伴走</h3><p>資格試験×生成AI。過去問や法令から問題集をつくり、紙で解いて、写真で採点する。勉強の仕組みごとお渡しします。</p></div>
+      </div>
+      <div class="svc">
+        <svg viewBox="0 0 34 34" fill="none" stroke="#1866b2" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="6" width="26" height="19" rx="3"/><path d="M4 11h26"/><circle cx="8" cy="8.5" r="1" fill="#1866b2"/><circle cx="12" cy="8.5" r="1" fill="#1866b2"/><path d="M13 29h8"/></svg>
+        <div><h3>見せるものづくり</h3><p>ホームページなどの制作も承ります。実物＝このサイトと <a href="https://a-tozak.github.io/School_Stock/" target="_blank" rel="noopener">School Stock ↗</a></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. 事例 -->
+<section class="cases" id="case">
+  <div class="wrap">
+    <span class="kick">CASE</span>
+    <h2>事例</h2>
+    <p class="case-note">すべて実際のご相談です（会社名・お名前は伏せています）</p>
+
+    <article class="case">
+      <h3>見積3枚が、1つの表に。</h3>
+      <div class="meta"><span>建設業</span><span>Gem（Geminiのカスタム機能）作成支援</span><span>Google Workspace</span></div>
+      <div class="case-grid">
+        <dl>
+          <dt>困りごと</dt>
+          <dd>相見積の比較や議事録づくりが、現場仕事のあとの手作業になっていた。</dd>
+          <dt>やったこと</dt>
+          <dd>見積書を読み取って1つの比較表（スプレッドシート）にするGemと、議事録をつくるGemの作成を支援。Gemini Notebookの使い方もあわせてお伝えした。</dd>
+          <dt>変わったこと</dt>
+          <dd><b>比較資料づくりが「貼って、確認するだけ」に。</b>道具は社内に残り、自分たちで直せます。</dd>
+        </dl>
+        <figure>
+          <img src="img/zukai_case1_mitsumori.webp" alt="見積書3枚が、貼るだけで1つの比較表になる図" width="1200" height="675" loading="lazy">
+        </figure>
+      </div>
+    </article>
+
+    <article class="case">
+      <h3>サポート3回で、資格試験に合格。</h3>
+      <div class="meta"><span>個人（50代）</span><span>勉強の仕組みづくり＋伴走3回</span><span>ChatGPT</span></div>
+      <div class="case-grid">
+        <dl>
+          <dt>困りごと</dt>
+          <dd>法令や過去問が多く、何からどう繰り返せばよいか分からない。</dd>
+          <dt>やったこと</dt>
+          <dd>過去問と法令をもとに問題集をつくり、紙に印刷して解き、写真を撮ってAIに採点してもらう仕組みを一緒に構築。その後のサポートは3回ほど。</dd>
+          <dt>変わったこと</dt>
+          <dd>この仕組みで勉強を重ね、<b>資格試験に合格された。</b></dd>
+        </dl>
+        <figure>
+          <img src="img/zukai_case2_goukaku.webp" alt="問題集をつくる・紙で解く・写真を撮る・AIが採点の循環で合格に至る図" width="1200" height="675" loading="lazy">
+        </figure>
+      </div>
+    </article>
+
+    <article class="case">
+      <h3>バラバラだった書式が、ひとつにそろった。</h3>
+      <div class="meta"><span>学校現場での実例</span><span>GASの小さなWebアプリ</span><span>会社の書式にも同じ型で</span></div>
+      <div class="case-grid">
+        <dl>
+          <dt>困りごと</dt>
+          <dd>文書の書式が人によってバラバラで、集めるたびに直す仕事が生まれていた。</dd>
+          <dt>やったこと</dt>
+          <dd>入力するだけで同じ書式に仕上がる小さなWebアプリを作成。あわせて時間数の集計表も、どこからでも最新が見られる形にした。</dd>
+          <dt>変わったこと</dt>
+          <dd><b>「そろえる仕事」自体がなくなった。</b>同じ型は、日報・見積・報告書にもそのまま使えます。</dd>
+        </dl>
+        <figure>
+          <img src="img/zukai_case3_shoshiki.webp" alt="バラバラの書式がフォーム入力で同じ書式にそろう図" width="1200" height="675" loading="lazy">
+        </figure>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- 6. 進め方 + FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <span class="kick">FLOW</span>
+    <h2>進め方</h2>
+    <p class="sec-lead">はじめての方も、この3つだけです。</p>
+    <div class="flow-grid">
+      <div class="step"><i>1</i><b>話を聞く</b><p>いまのやり方と困りごとを、そのまま。オンラインでも伺います</p></div>
+      <div class="step"><i>2</i><b>小さく1つ試す</b><p>いちばん効きそうな1つの業務から。大きな導入はしません</p></div>
+      <div class="step"><i>3</i><b>使えるまで</b><p>研修と伴走で、道具が「置き物」にならないところまで</p></div>
+    </div>
+
+    <span class="kick">FAQ</span>
+    <h2>よくある質問</h2>
+    <div class="faq" style="margin-top:20px;">
+      <details>
+        <summary>現役の先生なんですか？　平日は動けますか？</summary>
+        <div class="a"><p>はい、いまも小学校の教室に立っています。打ち合わせは夕方以降・週末・オンラインで。所属先の規程と手続きを確認のうえ、お受けできるかも含めてお返事します。</p></div>
+      </details>
+      <details>
+        <summary>費用はどう決まりますか？</summary>
+        <div class="a"><p>内容と回数を伺って、先にお見積りを出します。ご相談とお見積りは無料です。動き始めたあとの追加は、先に合意した分だけです。</p></div>
+      </details>
+      <details>
+        <summary>どの地域まで来てもらえますか？</summary>
+        <div class="a"><p>福岡・筑豊を中心に、九州内はご相談ください。オンラインだけでも、これまでの支援は成立しています。</p></div>
+      </details>
+      <details>
+        <summary>パソコンがかなり苦手なメンバーばかりでも大丈夫ですか？</summary>
+        <div class="a"><p>そこが本業です。学校で「苦手な人が使えるようになるまで」を10年やってきました。相手が先生でも、農家の方でも、建設業の方でも、やることは同じでした。</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 7. 人 -->
+<section class="who" id="who">
+  <div class="wrap">
+    <span class="kick">PROFILE</span>
+    <h2>伴走するのは、こんな人です。</h2>
+    <div class="who-card" style="margin-top:24px;">
+      <img src="../assets/author.jpg" alt="外﨑顯博の写真">
+      <div>
+        <div class="nm">外﨑 顯博<small>とざき あきひろ</small></div>
+        <p class="rl">福岡県飯塚市・公立小学校教員（ICT教育担当／研究主任）／LiFE with（2027年4月 開業予定）</p>
+        <p class="bio">「パソコンが苦手」の人が使えるようになるまで教えるのが、学校での本業です。むずかしい言葉を現場の言葉に翻訳して、その人のやり方に合う形で道具を渡す。それを10年やってきました。</p>
+        <div class="chips">
+          <span>小学校教諭一種</span><span>特別支援学校教諭一種</span><span>Google認定教育者 Lv1・2</span><span>トレーナースキル</span><span>GEGリーダー</span><span>Gemini認定教育者</span>
+        </div>
+        <a class="more" href="../profile/">くわしくは、1枚のプロフィールへ →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. 相談 -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="kick">CONTACT</span>
+    <h2>まず、話を聞かせてください。</h2>
+    <p>いまのやり方と困りごとを、そのままの言葉で。3日以内をめやすにお返事します。<br>現役教員のため、所属先の規程を確認のうえ、お受けできるかも含めてお答えします。</p>
+    <a class="btn big" href="https://docs.google.com/forms/d/e/1FAIpQLScyRZwj-S5ikt6aPwgLji8dzjfuklwg_K55keDtboNvg9O_bg/viewform" target="_blank" rel="noopener">相談フォームを開く</a>
+    <p class="mail">メール <a href="mailto:EdtechChikuho@gmail.com">EdtechChikuho@gmail.com</a> でも受け付けています</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <img src="../assets/logo.png" alt="LiFE with">
+        <p>ゆとりをもって、人を育てる社会へ。<br>福岡・筑豊から、学校と会社の「道具の翻訳と定着」を伴走します。</p>
+      </div>
+      <div>
+        <b>THIS PAGE</b>
+        <ul>
+          <li><a href="#service">できること</a></li>
+          <li><a href="#case">事例</a></li>
+          <li><a href="#faq">進め方・よくある質問</a></li>
+          <li><a href="#who">プロフィール</a></li>
+          <li><a href="#contact">相談する</a></li>
+        </ul>
+      </div>
+      <div>
+        <b>LiFE with</b>
+        <ul>
+          <li><a href="../">トップ（学校・先生の方へ）</a></li>
+          <li><a href="../profile/">はじめての方へ（1枚）</a></li>
+          <li><a href="https://a-tozak.github.io/School_Stock/" target="_blank" rel="noopener">School Stock ↗</a></li>
+          <li><a href="https://a-tozak.github.io/life-with/shiryo/" target="_blank" rel="noopener">研修資料 ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="legal">本サイトは個人の活動として運営しており、所属する学校・自治体の公式見解を示すものではありません。<br>© LiFE with（外﨑顯博）</p>
+  </div>
+</footer>
+
+</body>
+</html>
