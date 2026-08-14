@@ -251,6 +251,8 @@
 
   /* お知らせ＋登壇 */
   .nsgrid{ display:grid; grid-template-columns:1fr 1fr; gap:34px; margin-top:32px; align-items:start; }
+  .nsgrid > *{ min-width:0; }
+  .nw .t, .sc .t{ overflow-wrap:anywhere; }
   .nshead{ display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:12px; }
   .nshead h3{ font-family:"Zen Maru Gothic",sans-serif; font-size:19px; }
   .news-list{ background:#fff; border:1px solid var(--line); border-radius:var(--r); overflow:hidden; }
@@ -272,12 +274,7 @@
   .sc .sc-link{ margin-left:8px; font-size:12.5px; white-space:nowrap; }
 
   /* 読みもの（note・X） */
-  .embed-grid{ display:grid; grid-template-columns:1fr 1fr; gap:34px; margin-top:30px; align-items:start; }
-  .embed-col h3{ font-family:"Zen Maru Gothic",sans-serif; font-size:19px; margin-bottom:12px; }
   /* noteの埋め込みは中身の高さが足りないと題名が切れる。下限を決めておく */
-  .note-embed{ border:0; display:block; width:100%; margin:0 0 14px; min-height:260px; }
-  .x-wrap{ background:#fff; border:1px solid var(--line); border-radius:var(--r); padding:10px 18px; }
-  .embed-col .more{ display:inline-block; margin-top:6px; font-size:14.5px; }
 
   /* 研修でお配りしている資料 */
   .docs{ display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:32px; }
@@ -379,7 +376,7 @@
     .hero-ov{ position:static; padding:30px 24px 8px; }
     .hero-art img{ -webkit-mask-image:linear-gradient(#000 86%, transparent 100%);
                    mask-image:linear-gradient(#000 86%, transparent 100%); }
-    .about-grid, .contact-grid, .prof, .nsgrid, .embed-grid{ grid-template-columns:1fr; gap:30px; }
+    .about-grid, .contact-grid, .prof, .nsgrid{ grid-template-columns:1fr; gap:30px; }
     .ss-hero{ grid-template-columns:1fr; gap:18px; }
     /* CASEの横長3列は畳んで縦積みに戻す */
     .case{ grid-template-columns:1fr; padding:26px 26px; }
@@ -411,7 +408,6 @@
     h2{ font-size:24px; }
     .vbig{ font-size:21px; }
     .contact-card h2{ font-size:23px; }
-    .note-embed{ min-height:300px; }
     .fmap{ gap:30px; }
     .sec{ padding:60px 0; }
     .hero-ov{ padding:24px 22px 4px; align-items:flex-start; text-align:left; }
@@ -423,6 +419,8 @@
     .origin{ padding:30px 22px; }
     .nw{ flex-wrap:wrap; gap:8px 14px; }
     .nw .t{ flex-basis:100%; order:3; }
+    .sc{ flex-wrap:wrap; gap:6px 16px; }
+    .sc .t{ flex-basis:100%; }
     .contact-card{ padding:38px 24px; border-radius:20px; }
     .main-blk{ padding:28px 24px; }
   }
@@ -773,38 +771,6 @@
   </div>
 </section>
 
-<!-- 読みもの（note・X） -->
-<section class="sec" id="yomimono">
-  <div class="wrap">
-    <div class="sec-head" data-rv>
-      <span class="kick">Blog / SNS</span>
-      <h2>実践の途中も、そのまま公開しています。</h2>
-      <img class="deco" src="assets/ehon/p_book.png" alt="" style="right:-6px;">
-    </div>
-    <p class="lead" data-rv style="margin-top:12px;">うまくいったことも、いかなかったことも、noteとXに書いています。人柄と仕事ぶりは、こちらがいちばん分かります。</p>
-    <div class="embed-grid">
-      <div class="embed-col" data-rv>
-        <h3>noteの記事から</h3>
-        <iframe class="note-embed" src="https://note.com/embed/notes/naf8a2286ecd7" height="230" title="note記事：「自分の勉強不足」だと思える先生が、一番変わっていく。"></iframe>
-        <iframe class="note-embed" src="https://note.com/embed/notes/n8f4591c1ebbd" height="230" title="note記事：視写って大事。書き写しながら読むことでしか得られない気づきがありました。" loading="lazy"></iframe>
-        <a class="tl more" href="https://note.com/tozaki_edu" target="_blank" rel="noopener">noteをもっと読む ↗</a>
-      </div>
-      <div class="embed-col" data-rv>
-        <h3>X（旧Twitter）から</h3>
-        <div class="x-wrap">
-          <blockquote class="twitter-tweet" data-lang="ja">
-            <p>【拡散希望】<br>時間も労力もお金もかけ、本気でつくっている School Stockというサイト。<br><br>現場から公教育を変えていきませんか？<br>ぜひ、ご意見をお寄せください。<br>公立小学校の担任が1人で作っているので粗はありますが、必ずいいものに仕上げます。</p>
-            — 外﨑顯博（@Tozaki_edu）<a href="https://twitter.com/Tozaki_edu/status/2078420550846947752">2026年7月18日</a>
-          </blockquote>
-        </div>
-        <a class="tl more" href="https://x.com/Tozaki_edu" target="_blank" rel="noopener">Xで日々の実践を見る ↗</a>
-        <!-- 3本目のnoteを右へ回して2カラムの高さを揃える（左907/右425＝482pxの空白・苅田 2026-07-30） -->
-        <iframe class="note-embed" src="https://note.com/embed/notes/n995ffc9b5da4" height="230" title="note記事：25歳で読んだ「走れ」と、31歳で読んだ「走れ」は、別の物語でした。" style="margin-top:26px;" loading="lazy"></iframe>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- 対象別導線 -->
 <section class="sec alt" id="guide">
   <div class="wrap">
@@ -829,9 +795,9 @@
         <h3>企業・団体の方へ</h3>
         <dl>
           <dt>相談できること</dt>
-          <dd>出前授業・教材を「学校で使われる形」に整える支援、協働の授業づくり</dd>
+          <dd>現場仕事のパソコンまわりの整え（見積書・数字管理のかんたんなExcel、必要なら小さなWebアプリ）／AI活用の社内研修と、使えるようになるまでの定着／貴社の仕事を取材して、学校で使える教材にすること（出前授業・副読本のような形）</dd>
           <dt>まず見ていただきたいもの</dt>
-          <dd><a class="tl" href="#work">協働授業の取り組み</a>　<a class="tl" href="#record">副読本など実践の記録</a></dd>
+          <dd><a class="tl" href="#record">副読本など実践の記録</a>　<a class="tl" href="profile/">できることの一覧（1枚）</a></dd>
         </dl>
         <a class="tl" href="#contact">相談・連携について問い合わせる →</a>
       </div>
