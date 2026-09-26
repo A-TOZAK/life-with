@@ -1,411 +1,413 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>企業・団体の方へ｜LiFE with</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>事業所の方へ｜LiFE with</title>
 <meta name="description" content="現役の小学校教員が、パソコンとAIの「道具の翻訳と定着」を伴走します。見積書・数字管理の道具づくり、生成AI研修、資格勉強の仕組みづくり。福岡・筑豊を中心に、オンラインでも。">
-<meta name="robots" content="index,follow">
-<meta property="og:title" content="企業・団体の方へ｜LiFE with">
-<meta property="og:description" content="人手が足りなくても、回る。現役の小学校教員が、道具の翻訳と定着を伴走します。">
+<link rel="canonical" href="https://a-tozak.github.io/life-with/business/">
+<meta property="og:title" content="事業所の方へ｜LiFE with">
+<meta property="og:description" content="人手が足りなくても、回る。アセスメント、計画立案、伴走の3つで、1つの業務から小さく整えます。">
 <meta property="og:image" content="https://a-tozak.github.io/life-with/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://a-tozak.github.io/life-with/business/">
+<meta property="og:site_name" content="LiFE with">
+<meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="../assets/logo_icon.png" type="image/png">
+<link rel="icon" href="../assets/logo_icon.png">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --paper:#fff; --ink:#2f3236; --sub:#5c636b;
-    --ai:#1866b2; --ai2:#12518f; --sora:#eaf1f9; --sora2:#f3f7fc;
-    --mizu:#b9d1e8; --line:#e2e7ec; --max:1080px;
-  }
-  *{ margin:0; padding:0; box-sizing:border-box; }
-  html{ scroll-behavior:smooth; scroll-padding-top:76px; }
-  body{ font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;
-        color:var(--ink); background:var(--paper); line-height:1.9; font-size:15.5px;
-        -webkit-font-smoothing:antialiased; overflow-x:clip; }
-  img{ max-width:100%; height:auto; display:block; }
-  a{ color:inherit; }
-  .wrap{ max-width:var(--max); margin:0 auto; padding:0 28px; }
+:root{
+  --ink:#1f2328; --sub:#5b6169; --line:#dde2e8; --white:#fff;
+  --blue:#1866b2; --blue-d:#11508c; --wash:#eef4fa; --wash2:#f6f8fb;
+  --jp:"Noto Sans JP","Hiragino Sans",sans-serif;
+  --en:"Oswald","Noto Sans JP",sans-serif;
+  --wrap:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px;overflow-x:clip}
+body{font-family:var(--jp);color:var(--ink);background:var(--white);font-size:17px;line-height:1.85;letter-spacing:.02em;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3,.hero p,.lead,.emp p,.svc p,.case dd,.step p,.faq summary,.faq .a,.prof .txt,.contact .note{word-break:auto-phrase;line-break:strict;font-feature-settings:"palt";letter-spacing:.01em}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 32px}
+.h2{font-size:clamp(28px,3.4vw,42px);font-weight:700;line-height:1.4}
+.lead{color:var(--sub);margin-top:14px;max-width:34em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 30px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none;transition:background .2s,color .2s}
+.btn-main{background:var(--blue);color:#fff}
+.btn-main:hover{background:var(--blue-d)}
+.btn-line{border:1px solid var(--ink);color:var(--ink);background:#fff}
+.btn-line:hover{background:var(--ink);color:#fff}
+.arrow::after{content:"→";font-family:var(--en)}
 
-  /* ヘッダー */
-  header{ position:sticky; top:0; z-index:100; background:rgba(255,255,255,.96);
-          backdrop-filter:blur(6px); border-bottom:1px solid var(--line); }
-  .hd{ max-width:var(--max); margin:0 auto; padding:0 28px; height:66px;
-       display:flex; align-items:center; gap:22px; }
-  .brand{ display:flex; align-items:center; gap:10px; text-decoration:none; margin-right:auto; }
-  .brand img{ height:40px; width:auto; }
-  .brand small{ font-size:11.5px; color:var(--sub); letter-spacing:.08em; border-left:1px solid var(--line); padding-left:10px; }
-  nav.gnav{ display:flex; gap:22px; }
-  nav.gnav a{ font-size:13.5px; font-weight:600; color:#454a50; text-decoration:none; }
-  nav.gnav a:hover{ color:var(--ai); }
-  .hd .btn{ margin-left:4px; }
+/* ヘッダー */
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;gap:28px;height:72px}
+.hd .logo{display:flex;align-items:center;gap:14px;text-decoration:none}
+.hd .logo img{height:44px;width:auto}
+.hd .logo small{font-size:13px;color:var(--sub);border-left:1px solid var(--line);padding-left:14px;font-weight:500}
+.hd nav{display:flex;gap:26px;margin-left:auto;font-size:15px;font-weight:500}
+.hd nav a{text-decoration:none}
+.hd nav a:hover{color:var(--blue)}
+.hd .btn{height:44px;padding:0 22px;font-size:15px}
 
-  .btn{ display:inline-block; text-decoration:none; font-size:14.5px; font-weight:700;
-        letter-spacing:.05em; padding:11px 24px; border-radius:999px;
-        background:var(--ai); color:#fff; border:1.5px solid var(--ai); }
-  .btn:hover{ background:var(--ai2); border-color:var(--ai2); }
-  .btn.ghost{ background:#fff; color:var(--ai); border-color:var(--mizu); }
-  .btn.ghost:hover{ background:var(--sora2); }
-  .btn.big{ font-size:16px; padding:14px 34px; }
+/* ヒーロー */
+.hero{padding:96px 0 120px}
+.hero-in{display:grid;grid-template-columns:7fr 5fr;gap:64px;align-items:center}
+.hero .place{font-family:var(--en);font-size:14px;letter-spacing:.24em;color:var(--sub)}
+.hero h1{font-size:clamp(36px,4.3vw,64px);font-weight:900;line-height:1.28;margin-top:18px;letter-spacing:-.01em}
+.hero h1 span{display:block}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.hero p{margin-top:26px;font-size:18px;max-width:25em;line-height:1.9}
+.hero .cta{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.hero .pic{aspect-ratio:1/1;overflow:hidden}
+.hero .pic img{width:100%;height:100%;object-fit:cover}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);border-bottom:1px solid var(--line);margin-top:88px}
+.num{padding:30px 24px 26px;border-left:1px solid var(--line)}
+.num:first-child{border-left:0;padding-left:0}
+.num b{display:block;font-family:var(--en);font-weight:500;font-size:clamp(40px,4.2vw,58px);line-height:1;letter-spacing:-.01em}
+.num b small{font-family:var(--jp);font-size:18px;font-weight:700;margin-left:4px}
+.num span{display:block;margin-top:12px;font-size:15px;font-weight:500}
+.num em{display:block;font-style:normal;font-size:12px;color:var(--sub);margin-top:2px}
 
-  section{ padding:74px 0; }
-  .kick{ font-size:12px; letter-spacing:.28em; color:var(--ai); font-weight:700; }
-  h2{ font-size:clamp(22px,2.6vw,28px); font-weight:700; letter-spacing:.03em;
-      line-height:1.6; margin:6px 0 8px; }
-  .sec-lead{ color:var(--sub); font-size:14.5px; margin-bottom:34px; }
+.sec{padding:120px 0}
 
-  /* 1. ヒーロー */
-  .hero{ background:linear-gradient(180deg,var(--sora) 0%,var(--sora2) 100%); padding:64px 0 70px; }
-  .hero .wrap{ display:grid; grid-template-columns:1.02fr .98fr; gap:44px; align-items:center; }
-  .hero .kick{ margin-bottom:10px; display:block; }
-  h1{ font-size:clamp(30px,4vw,44px); font-weight:800; letter-spacing:.03em; line-height:1.5; }
-  .hero p.lead{ margin:16px 0 6px; color:#454a50; font-size:15.5px; }
-  .hero .nums{ display:flex; gap:10px; margin:18px 0 24px; flex-wrap:wrap; }
-  .hero .num{ background:#fff; border:1px solid var(--line); border-radius:12px;
-              padding:10px 16px 12px; min-width:118px; }
-  .hero .num b{ font-size:26px; color:var(--ai); letter-spacing:.02em; }
-  .hero .num b small{ font-size:13px; margin-left:1px; }
-  .hero .num span{ display:block; font-size:11.5px; color:var(--sub); line-height:1.6; margin-top:2px; }
-  .cta{ display:flex; gap:12px; flex-wrap:wrap; }
+/* こんなとき */
+.emp-sec{background:var(--wash);padding:110px 0}
+.emps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:48px}
+.emp{border-top:2px solid var(--blue);padding-top:20px}
+.emp b{font-family:var(--en);font-weight:500;font-size:14px;letter-spacing:.2em;color:var(--blue)}
+.emp p{margin-top:8px;font-size:19px;font-weight:700;line-height:1.6}
 
-  .shots{ position:relative; min-width:0; }
-  .shot{ background:#fff; border:1px solid #d8dee5; border-radius:12px; overflow:hidden;
-         box-shadow:0 18px 40px -18px rgba(24,52,90,.28); }
-  .shot .bar{ height:26px; background:#f1f4f8; border-bottom:1px solid var(--line);
-              display:flex; align-items:center; gap:5px; padding:0 12px; }
-  .shot .bar i{ width:8px; height:8px; border-radius:50%; background:#cfd8e2; }
-  .shot.back{ position:absolute; right:-6px; top:-26px; width:62%; transform:rotate(2.4deg); z-index:0; }
-  .shot.front{ position:relative; width:86%; z-index:1; }
-  .shot-note{ margin-top:14px; font-size:12px; color:var(--sub); }
+/* できること */
+.svcs{display:grid;grid-template-columns:1fr 1fr;gap:0 56px;margin-top:56px}
+.svc{display:grid;grid-template-columns:72px 1fr;border-top:1px solid var(--line);padding:30px 0 32px}
+.svc:nth-child(-n+2){border-top:1px solid var(--ink)}
+.svc .no{font-family:var(--en);font-weight:500;font-size:40px;line-height:1;color:var(--blue)}
+.svc h3{font-size:22px;font-weight:700;line-height:1.45}
+.svc p{margin-top:10px;color:var(--sub);font-size:16px}
+.svc p a{color:var(--blue);font-weight:700;text-decoration:none;border-bottom:1px solid currentColor}
 
-  /* 2. 実物の壁 */
-  .wall{ background:#fff; }
-  .wall-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
-  .w-card{ border:1px solid var(--line); border-radius:12px; overflow:hidden; text-decoration:none;
-           background:#fff; transition:box-shadow .15s ease; min-width:0; }
-  .w-card:hover{ box-shadow:0 10px 26px -14px rgba(24,52,90,.35); }
-  .w-card .th{ border-bottom:1px solid var(--line); aspect-ratio:4/3; overflow:hidden; }
-  .w-card .th img{ width:100%; height:100%; object-fit:cover; object-position:top; }
-  .w-card .tx{ padding:12px 14px 14px; }
-  .w-card .tx b{ font-size:14px; }
-  .w-card .tx b span{ color:var(--ai); font-weight:700; }
-  .w-card .tx p{ font-size:12px; color:var(--sub); line-height:1.7; margin-top:3px; }
+/* 事例 */
+.cases-sec{background:var(--wash2);padding:120px 0}
+.case{border-top:1px solid var(--ink);padding:36px 0 44px;display:grid;grid-template-columns:1fr 440px;gap:48px;align-items:start}
+.case:first-of-type{margin-top:48px}
+.case .meta{font-size:13px;font-weight:700;color:var(--sub)}
+.case .meta span+span::before{content:"・"}
+.case .meta span:first-child{color:var(--blue)}
+.case h3{font-size:clamp(22px,2.2vw,28px);font-weight:700;line-height:1.45;margin-top:8px}
+.case dl{display:grid;grid-template-columns:7em 1fr;margin-top:22px;border-top:1px solid var(--line)}
+.case dt,.case dd{padding:14px 0;border-bottom:1px solid var(--line)}
+.case dt{font-size:14px;font-weight:700;color:var(--sub)}
+.case dt.after{color:var(--blue)}
+.case dd{font-size:16px;line-height:1.85}
+.case dd b{color:var(--ink)}
+.case figure{background:#fff;border:1px solid var(--line)}
+.case figure img{width:100%}
 
-  /* 3. こんなときに */
-  .empathy{ background:var(--sora2); }
-  .emp-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-  .emp{ background:#fff; border:1px solid var(--line); border-radius:12px; padding:22px 24px; min-width:0; }
-  .emp svg{ width:26px; height:26px; margin-bottom:10px; }
-  .emp p{ font-size:15px; font-weight:600; line-height:1.85; }
+/* 実物 */
+.works{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:48px}
+.work{text-decoration:none;display:block}
+.work .th{aspect-ratio:4/3;overflow:hidden;border:1px solid var(--line);background:#fff}
+.work .th img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .4s ease}
+.work:hover .th img{transform:scale(1.03)}
+.work b{display:block;margin-top:14px;font-size:17px;font-weight:700}
+.work b span{color:var(--blue);font-family:var(--en);margin-left:4px}
+.work p{font-size:14px;color:var(--sub);line-height:1.7;margin-top:4px}
 
-  /* 4. できること */
-  .svc-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
-  .svc{ border:1px solid var(--line); border-radius:12px; padding:24px 26px; display:flex; gap:16px; min-width:0; }
-  .svc svg{ flex:0 0 34px; width:34px; height:34px; margin-top:3px; }
-  .svc h3{ font-size:17px; font-weight:700; margin-bottom:4px; }
-  .svc p{ font-size:13.5px; color:var(--sub); line-height:1.85; }
-  .svc a{ color:var(--ai); font-weight:600; text-decoration:none; border-bottom:1px solid var(--mizu); }
+/* 進め方 */
+.flow-sec{background:var(--wash);padding:120px 0}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:56px}
+.step .pic{aspect-ratio:4/3;background:#fff;overflow:hidden}
+.step .pic img{width:100%;height:100%;object-fit:cover;object-position:center bottom}
+.step .no{display:flex;align-items:baseline;gap:14px;margin-top:18px}
+.step .no b{font-family:var(--en);font-weight:500;font-size:56px;line-height:1;color:var(--blue)}
+.step .no span{font-size:14px;font-weight:700;letter-spacing:.14em;color:var(--sub)}
+.step h3{font-size:26px;font-weight:700;margin-top:10px;line-height:1.45}
+.step p{margin-top:10px;color:var(--sub);font-size:16px}
+.flow-sec .more{margin-top:48px;font-size:15px;color:var(--sub)}
+.flow-sec .more a{color:var(--blue);font-weight:700}
 
-  /* 5. 事例 */
-  .cases{ background:var(--sora); }
-  .case{ background:#fff; border:1px solid var(--line); border-radius:14px;
-         padding:28px 30px; margin-top:20px; }
-  .case:first-of-type{ margin-top:0; }
-  .case h3{ font-size:19px; font-weight:700; margin-bottom:10px; }
-  .meta{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px; }
-  .meta span{ font-size:12px; font-weight:600; color:var(--ai2); background:var(--sora);
-              border-radius:999px; padding:3px 12px; }
-  .case-grid{ display:grid; grid-template-columns:1fr 300px; gap:26px; align-items:start; }
-  .case dl{ min-width:0; }
-  .case dt{ font-size:12.5px; font-weight:700; color:var(--ai); letter-spacing:.06em; margin-top:12px; }
-  .case dt:first-child{ margin-top:0; }
-  .case dd{ font-size:14.5px; color:#454a50; line-height:1.9; }
-  .case dd b{ color:var(--ink); }
-  .case figure{ min-width:0; margin:0; }
-  .case figure img{ border:1px solid var(--line); border-radius:10px; width:100%; }
-  .case figcaption{ font-size:11.5px; color:var(--sub); margin-top:6px; }
-  .case-note{ font-size:12.5px; color:var(--sub); margin-bottom:18px; }
+/* FAQ */
+.faq{margin-top:48px;border-top:1px solid var(--ink)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;display:grid;grid-template-columns:40px 1fr 28px;align-items:baseline;padding:24px 0;font-size:18px;font-weight:700}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";font-family:var(--en);font-weight:500;font-size:22px;color:var(--blue)}
+.faq summary::after{content:"+";font-family:var(--en);font-size:24px;color:var(--blue);text-align:right;font-weight:400}
+.faq details[open] summary::after{content:"−"}
+.faq .a{display:grid;grid-template-columns:40px 1fr;padding:0 28px 26px 0;color:var(--sub);font-size:16px;line-height:1.95}
+.faq .a::before{content:"A";font-family:var(--en);font-weight:500;font-size:22px;color:var(--sub);line-height:1.4}
 
-  /* 6. 進め方 + FAQ */
-  .flow-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-bottom:56px; }
-  .step{ border:1px solid var(--line); border-radius:12px; padding:22px 24px; position:relative; min-width:0; }
-  .step i{ display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px;
-           border-radius:50%; background:var(--ai); color:#fff; font-style:normal; font-weight:700; margin-bottom:10px; }
-  .step b{ display:block; font-size:16px; }
-  .step p{ font-size:13px; color:var(--sub); margin-top:4px; }
-  .faq details{ border-bottom:1px solid var(--line); }
-  .faq details:first-of-type{ border-top:1px solid var(--line); }
-  .faq summary{ cursor:pointer; list-style:none; display:flex; gap:14px; align-items:baseline;
-                padding:18px 6px; font-size:15.5px; font-weight:700; }
-  .faq summary::-webkit-details-marker{ display:none; }
-  .faq summary::before{ content:"Q"; color:var(--ai); font-weight:800; }
-  .faq summary::after{ content:"＋"; margin-left:auto; color:var(--ai); font-weight:400; }
-  .faq details[open] summary::after{ content:"−"; }
-  .faq .a{ display:flex; gap:14px; padding:0 6px 20px; color:#454a50; font-size:14.5px; line-height:1.95; }
-  .faq .a::before{ content:"A"; color:var(--sub); font-weight:800; }
+/* プロフィール */
+.prof{padding:0 0 120px}
+.prof-in{display:grid;grid-template-columns:200px 1fr;gap:56px;align-items:start;border-top:1px solid var(--ink);padding-top:56px}
+.prof .ph img{width:200px;height:200px;border-radius:50%;object-fit:cover}
+.prof .h2{margin-bottom:22px}
+.prof h3{font-size:30px;font-weight:700}
+.prof h3 small{font-size:15px;font-weight:400;color:var(--sub);margin-left:12px}
+.prof .role{margin-top:6px;color:var(--sub);font-size:15px}
+.prof .txt{margin-top:18px;max-width:40em}
+.creds{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.creds span{font-size:13px;border:1px solid var(--line);border-radius:999px;padding:3px 12px;color:var(--sub)}
+.prof .more{margin-top:22px;display:inline-block;color:var(--blue);font-weight:700;text-decoration:none;border-bottom:1px solid currentColor}
 
-  /* 7. 人 */
-  .who{ background:var(--sora2); }
-  .who-card{ background:#fff; border:1px solid var(--line); border-radius:14px;
-             padding:30px 34px; display:grid; grid-template-columns:112px 1fr; gap:26px; align-items:start; }
-  .who-card img{ width:112px; height:112px; object-fit:cover; border-radius:50%; }
-  .who-card .nm{ font-size:20px; font-weight:800; }
-  .who-card .nm small{ font-size:12.5px; font-weight:500; color:var(--sub); margin-left:10px; }
-  .who-card .rl{ font-size:13px; color:var(--sub); margin:2px 0 10px; }
-  .who-card p.bio{ font-size:14.5px; color:#454a50; line-height:1.95; }
-  .chips{ display:flex; gap:6px 8px; flex-wrap:wrap; margin:14px 0 10px; }
-  .chips span{ font-size:11.5px; color:#454a50; background:var(--sora2); border:1px solid var(--line);
-               border-radius:999px; padding:3px 11px; white-space:nowrap; }
-  .who-card a.more{ font-size:13.5px; color:var(--ai); font-weight:700; text-decoration:none;
-                    border-bottom:1px solid rgba(24,102,178,.4); }
+/* 相談 */
+.contact{padding:130px 0 120px;text-align:center;border-top:1px solid var(--line)}
+.contact .h2{font-size:clamp(30px,3.8vw,48px)}
+.contact .lead{margin:16px auto 0}
+.contact .cta{display:flex;gap:14px;justify-content:center;margin-top:36px;flex-wrap:wrap}
+.contact .note{margin-top:22px;font-size:14px;color:var(--sub)}
+.closing{height:clamp(160px,22vw,340px);background:url(../assets/v13/footer_machi.webp) center bottom/cover no-repeat;margin-top:-40px}
 
-  /* 8. 相談 */
-  .contact{ background:var(--ai); color:#fff; }
-  .contact .kick{ color:#cfe0f2; }
-  .contact h2{ color:#fff; }
-  .contact p{ color:#e4edf7; font-size:14.5px; }
-  .contact .btn{ background:#fff; color:var(--ai); border-color:#fff; margin-top:22px; }
-  .contact .btn:hover{ background:var(--sora); }
-  .contact .mail{ margin-top:14px; font-size:13px; color:#cfe0f2; }
-  .contact .mail a{ color:#fff; overflow-wrap:anywhere; }
+footer{border-top:1px solid var(--line);padding:56px 0 40px;font-size:14px}
+.ft{display:grid;grid-template-columns:1fr auto auto;gap:56px}
+.ft .logo img{height:48px;width:auto}
+.ft p{color:var(--sub);margin-top:10px;line-height:1.8}
+.ft b{display:block;font-family:var(--en);letter-spacing:.2em;font-weight:500;color:var(--sub);font-size:12px;margin-bottom:8px}
+.ft a{display:block;text-decoration:none;line-height:2.1}
+.ft a:hover{color:var(--blue)}
+.copy{margin-top:40px;color:var(--sub);font-size:12px;border-top:1px solid var(--line);padding-top:18px}
 
-  footer{ background:#fff; border-top:1px solid var(--line); padding:44px 0 40px; }
-  .fgrid{ display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:30px; }
-  .fgrid img{ height:36px; width:auto; margin-bottom:10px; }
-  .fgrid p{ font-size:12.5px; color:var(--sub); line-height:1.9; }
-  .fgrid b{ display:block; font-size:12px; letter-spacing:.18em; color:var(--ai); margin-bottom:10px; }
-  .fgrid ul{ list-style:none; }
-  .fgrid li{ padding:3px 0; }
-  .fgrid li a{ font-size:13.5px; color:#454a50; text-decoration:none; }
-  .fgrid li a:hover{ color:var(--ai); }
-  .legal{ border-top:1px solid var(--line); margin-top:30px; padding-top:20px;
-          font-size:11.5px; color:var(--sub); line-height:1.9; }
+.js [data-rv]{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+.js [data-rv].in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js [data-rv]{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.work:hover .th img{transform:none}}
 
-  @media (max-width:900px){
-    nav.gnav{ display:none; }
-    .hero .wrap{ grid-template-columns:1fr; gap:36px; }
-    .shots{ margin:0 auto; max-width:520px; width:100%; }
-    .wall-grid, .emp-grid, .flow-grid{ grid-template-columns:1fr 1fr; }
-    .svc-grid{ grid-template-columns:1fr; }
-    .case-grid{ grid-template-columns:1fr; }
-    .case figure{ max-width:420px; }
-  }
-  @media (max-width:600px){
-    html{ scroll-padding-top:64px; }
-    section{ padding:56px 0; }
-    .hd{ height:58px; padding:0 20px; }
-    .brand img{ height:34px; } .brand small{ display:none; }
-    .wrap{ padding:0 20px; }
-    .wall-grid, .emp-grid, .flow-grid{ grid-template-columns:1fr; }
-    .hero{ padding:44px 0 54px; }
-    .hero .num{ flex:1 1 40%; min-width:0; }
-    .who-card{ grid-template-columns:1fr; justify-items:center; text-align:center; }
-    .chips{ justify-content:center; }
-  }
+@media (max-width:960px){
+  .hd nav{display:none}
+  .hd .btn{margin-left:auto}
+  .hero-in{grid-template-columns:1fr;gap:40px}
+  .hero .pic{max-width:420px;aspect-ratio:4/3}
+  .emps{grid-template-columns:1fr;gap:28px}
+  .svcs{grid-template-columns:1fr}
+  .svc:nth-child(2){border-top:1px solid var(--line)}
+  .case{grid-template-columns:1fr;gap:28px}
+  .case figure{max-width:520px}
+  .works{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr;gap:56px}
+  .step{display:grid;grid-template-columns:40% 1fr;gap:24px;align-items:center}
+  .step .no{margin-top:0}
+  .prof-in{grid-template-columns:1fr;gap:28px}
+  .ft{grid-template-columns:1fr 1fr}
+  .ft>div:first-child{grid-column:1/-1}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .wrap{padding:0 20px}
+  html{scroll-padding-top:68px}
+  .hd{height:62px;gap:12px}
+  .hd .logo img{height:36px}
+  .hd .logo small{display:none}
+  .hd .btn{height:40px;padding:0 16px;font-size:14px}
+  .hero{padding:48px 0 84px}
+  .hero p{font-size:16px}
+  .hero .cta .btn{flex:1 1 0;padding:0 12px}
+  .nums{grid-template-columns:1fr;margin-top:56px}
+  .num{border-left:0;padding:22px 0 18px;border-top:1px solid var(--line)}
+  .num:first-child{border-top:0}
+  .sec,.emp-sec,.cases-sec,.flow-sec,.contact{padding:84px 0}
+  .prof{padding-bottom:84px}
+  .emp p{font-size:17px}
+  .svc{grid-template-columns:52px 1fr}
+  .svc .no{font-size:30px}
+  .case dl{grid-template-columns:1fr}
+  .case dt{padding-bottom:0;border-bottom:0}
+  .works{grid-template-columns:1fr;gap:28px}
+  .step{grid-template-columns:1fr;gap:6px}
+  .step .pic{max-width:300px}
+  .faq summary{font-size:16px;grid-template-columns:32px 1fr 24px}
+  .faq .a{grid-template-columns:32px 1fr;padding-right:0}
+  .prof .ph img{width:160px;height:160px}
+  .contact .cta .btn{width:100%}
+}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="hd">
-    <a class="brand" href="../"><img src="../assets/logo.png" alt="LiFE with"><small>企業・団体の方へ</small></a>
-    <nav class="gnav" aria-label="ページ内">
+  <div class="wrap hd">
+    <a class="logo" href="../"><img src="../assets/logo.png" alt="LiFE with ゆとりをもって人を育てる社会へ" width="576" height="196"><small>事業所の方へ</small></a>
+    <nav aria-label="ページ内">
       <a href="#service">できること</a>
       <a href="#case">事例</a>
+      <a href="#flow">進め方</a>
       <a href="#faq">よくある質問</a>
       <a href="#who">プロフィール</a>
     </nav>
-    <a class="btn" href="#contact">相談する</a>
+    <a class="btn btn-main" href="#contact">相談する</a>
   </div>
 </header>
 
-<!-- 1. ヒーロー -->
+<main>
 <section class="hero">
   <div class="wrap">
-    <div>
-      <span class="kick">FOR BUSINESS</span>
-      <h1>人手が足りなくても、<br>回る。</h1>
-      <p class="lead">現役の小学校教員が、パソコンとAIの「道具の翻訳と定着」を伴走します。むずかしい言葉を使わずに、現場のやり方に合わせて、使えるようになるまで。</p>
-      <div class="nums">
-        <div class="num"><b>10<small>年</small></b><span>現場に立っている</span></div>
-        <div class="num"><b>1.8<small>万回</small></b><span>無料教材が保存された回数（のべ・2026年9月）</span></div>
-        <div class="num"><b>1,300<small>枚</small></b><span>自作の無料教材</span></div>
+    <div class="hero-in">
+      <div>
+        <div class="place">FOR BUSINESS ／ FUKUOKA CHIKUHO</div>
+        <h1><span>人手が足りなくても</span><span><em>回る</em></span></h1>
+        <p>現役の小学校教員が、パソコンとAIの「道具の翻訳と定着」を伴走します。むずかしい言葉を使わずに、現場のやり方に合わせて、使えるようになるまで。</p>
+        <div class="cta">
+          <a class="btn btn-main arrow" href="#contact">相談する</a>
+          <a class="btn btn-line" href="#case">事例を見る</a>
+        </div>
       </div>
-      <div class="cta">
-        <a class="btn big" href="#contact">相談する</a>
-        <a class="btn big ghost" href="#case">事例を見る</a>
-      </div>
+      <div class="pic"><img src="../assets/v13/door_jigyousho.webp" alt="窓ぎわの事務机とノートパソコンと書類" width="960" height="960"></div>
     </div>
-    <div class="shots">
-      <div class="shot back" aria-hidden="true">
-        <div class="bar"><i></i><i></i><i></i></div>
-        <img src="img/shot_tateiwa.webp" alt="" width="1000" height="750" loading="lazy">
-      </div>
-      <div class="shot front">
-        <div class="bar"><i></i><i></i><i></i></div>
-        <img src="img/shot_schoolstock.webp" alt="自作の無料教材の棚「School Stock」の画面" width="1000" height="750">
-      </div>
-      <p class="shot-note">画面は実際に公開しているもの（無料教材の棚・研修サイト）</p>
+    <div class="nums">
+      <div class="num"><b>10<small>年</small></b><span>現場に立っている</span><em>2016年から</em></div>
+      <div class="num"><b>1.8<small>万回</small></b><span>無料教材が保存された回数</span><em>のべ・2026年9月</em></div>
+      <div class="num"><b>1,300<small>枚</small></b><span>自作の無料教材</span><em>School Stock</em></div>
     </div>
   </div>
 </section>
 
-<!-- 2. 実物の壁 -->
-<section class="wall">
+<section class="emp-sec">
   <div class="wrap">
-    <span class="kick">WORKS</span>
-    <h2>作ったものは、ぜんぶ公開しています。</h2>
-    <p class="sec-lead">言葉より先に、実物を見てください。すべてクリックでそのまま開きます。</p>
-    <div class="wall-grid">
-      <a class="w-card" href="https://a-tozak.github.io/School_Stock/" target="_blank" rel="noopener">
-        <div class="th"><img src="img/shot_schoolstock.webp" alt="" width="1000" height="750" loading="lazy"></div>
-        <div class="tx"><b>School Stock <span>↗</span></b><p>自作教材1,300枚超の無料の棚。登録不要</p></div>
-      </a>
-      <a class="w-card" href="https://a-tozak.github.io/life-with/shiryo/" target="_blank" rel="noopener">
-        <div class="th"><img src="img/shot_shiryo.webp" alt="" width="1000" height="750" loading="lazy"></div>
-        <div class="tx"><b>研修資料 <span>↗</span></b><p>研修でお配りしている資料を全ページ公開</p></div>
-      </a>
-      <a class="w-card" href="https://a-tozak.github.io/jugyo-planner/" target="_blank" rel="noopener">
-        <div class="th"><img src="img/shot_planner.webp" alt="" width="1000" height="750" loading="lazy"></div>
-        <div class="tx"><b>授業プランナー <span>↗</span></b><p>AIエージェントで学期の見通しを組む実演</p></div>
-      </a>
-      <a class="w-card" href="https://a-tozak.github.io/reboot-print/" target="_blank" rel="noopener">
-        <div class="th"><img src="img/shot_reboot.webp" alt="" width="1000" height="750" loading="lazy"></div>
-        <div class="tx"><b>高校リブートプリント <span>↗</span></b><p>学び直しから始める高校全教科の無料プリント</p></div>
-      </a>
+    <h2 class="h2" data-rv>こんなとき<br>ありませんか</h2>
+    <p class="lead" data-rv>ひとつでも当てはまったら、お手伝いできる可能性が高いです。</p>
+    <div class="emps">
+      <div class="emp" data-rv><b>01</b><p>見積書や書類づくりが、現場仕事のあとの残業になっている</p></div>
+      <div class="emp" data-rv><b>02</b><p>AIやパソコンを入れたけれど、使われないまま置いてある</p></div>
+      <div class="emp" data-rv><b>03</b><p>研修やDXを、相談できる相手が社内にいない</p></div>
     </div>
   </div>
 </section>
 
-<!-- 3. こんなときに -->
-<section class="empathy">
+<section class="sec" id="service">
   <div class="wrap">
-    <span class="kick">EMPATHY</span>
-    <h2>こんなとき、ありませんか。</h2>
-    <p class="sec-lead">ひとつでも当てはまったら、お手伝いできる可能性が高いです。</p>
-    <div class="emp-grid">
-      <div class="emp">
-        <svg viewBox="0 0 26 26" fill="none" stroke="#1866b2" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="20" height="20" rx="5"/><path d="M8 13.5l3.5 3.5L18.5 10"/></svg>
-        <p>見積書や書類づくりが、現場仕事のあとの残業になっている</p>
-      </div>
-      <div class="emp">
-        <svg viewBox="0 0 26 26" fill="none" stroke="#1866b2" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="20" height="20" rx="5"/><path d="M8 13.5l3.5 3.5L18.5 10"/></svg>
-        <p>AIやパソコンを入れたけれど、使われないまま置いてある</p>
-      </div>
-      <div class="emp">
-        <svg viewBox="0 0 26 26" fill="none" stroke="#1866b2" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="20" height="20" rx="5"/><path d="M8 13.5l3.5 3.5L18.5 10"/></svg>
-        <p>研修やDXを、相談できる相手が社内にいない</p>
-      </div>
+    <h2 class="h2" data-rv>できること</h2>
+    <p class="lead" data-rv>その会社の1つの業務から。大きな導入はしません。</p>
+    <div class="svcs">
+      <div class="svc" data-rv><div class="no">01</div><div><h3>小さな道具づくり</h3><p>見積書・数字管理のかんたんなExcel、書式をそろえるフォーム、必要なら小さなWebアプリ。作って終わりでなく、使えるまで教えます。</p></div></div>
+      <div class="svc" data-rv><div class="no">02</div><div><h3>生成AIの入口づくりと定着</h3><p>社内研修と、月1〜2回の顧問。ついていけない気がしている方のところにこそ、横に着きます。</p></div></div>
+      <div class="svc" data-rv><div class="no">03</div><div><h3>大人の学びの伴走</h3><p>資格試験×生成AI。過去問や法令から問題集をつくり、紙で解いて、写真で採点する。勉強の仕組みごとお渡しします。</p></div></div>
+      <div class="svc" data-rv><div class="no">04</div><div><h3>見せるものづくり</h3><p>ホームページなどの制作も承ります。実物＝このサイトと <a href="https://a-tozak.github.io/School_Stock/" target="_blank" rel="noopener">School Stock ↗</a></p></div></div>
     </div>
   </div>
 </section>
 
-<!-- 4. できること -->
-<section id="service">
+<section class="cases-sec" id="case">
   <div class="wrap">
-    <span class="kick">SERVICE</span>
-    <h2>できること</h2>
-    <p class="sec-lead">その会社の1つの業務から。大きな導入はしません。</p>
-    <div class="svc-grid">
-      <div class="svc">
-        <svg viewBox="0 0 34 34" fill="none" stroke="#1866b2" stroke-width="1.8" stroke-linecap="round"><rect x="5" y="4" width="18" height="24" rx="3"/><path d="M10 11h8M10 16h8M10 21h5"/><circle cx="26" cy="24" r="6" fill="#eaf1f9"/><path d="M26 21v6M23 24h6"/></svg>
-        <div><h3>小さな道具づくり</h3><p>見積書・数字管理のかんたんなExcel、書式をそろえるフォーム、必要なら小さなWebアプリ。作って終わりでなく、使えるまで教えます。</p></div>
-      </div>
-      <div class="svc">
-        <svg viewBox="0 0 34 34" fill="none" stroke="#1866b2" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="11" r="5"/><path d="M4 28c1-5 4-8 8-8s7 3 8 8"/><path d="M24 8l1.2 3L28 12l-2.8 1L24 16l-1.2-3L20 12l2.8-1z" fill="#eaf1f9"/></svg>
-        <div><h3>生成AIの入口づくりと定着</h3><p>社内研修と、月1〜2回の顧問。ついていけない気がしている方のところにこそ、横に着きます。</p></div>
-      </div>
-      <div class="svc">
-        <svg viewBox="0 0 34 34" fill="none" stroke="#1866b2" stroke-width="1.8" stroke-linecap="round"><path d="M6 7h16v22H6z"/><path d="M22 7l6 3v22l-6-3"/><path d="M10 13h8M10 18h8M10 23h5"/></svg>
-        <div><h3>大人の学びの伴走</h3><p>資格試験×生成AI。過去問や法令から問題集をつくり、紙で解いて、写真で採点する。勉強の仕組みごとお渡しします。</p></div>
-      </div>
-      <div class="svc">
-        <svg viewBox="0 0 34 34" fill="none" stroke="#1866b2" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="6" width="26" height="19" rx="3"/><path d="M4 11h26"/><circle cx="8" cy="8.5" r="1" fill="#1866b2"/><circle cx="12" cy="8.5" r="1" fill="#1866b2"/><path d="M13 29h8"/></svg>
-        <div><h3>見せるものづくり</h3><p>ホームページなどの制作も承ります。実物＝このサイトと <a href="https://a-tozak.github.io/School_Stock/" target="_blank" rel="noopener">School Stock ↗</a></p></div>
-      </div>
-    </div>
-  </div>
-</section>
+    <h2 class="h2" data-rv>事例</h2>
+    <p class="lead" data-rv>すべて実際のご相談です（会社名・お名前は伏せています）</p>
 
-<!-- 5. 事例 -->
-<section class="cases" id="case">
-  <div class="wrap">
-    <span class="kick">CASE</span>
-    <h2>事例</h2>
-    <p class="case-note">すべて実際のご相談です（会社名・お名前は伏せています）</p>
-
-    <article class="case">
-      <h3>見積3枚が、1つの表に。</h3>
-      <div class="meta"><span>建設業</span><span>Gem（Geminiのカスタム機能）作成支援</span><span>Google Workspace</span></div>
-      <div class="case-grid">
+    <article class="case" data-rv>
+      <div>
+        <div class="meta"><span>建設業</span><span>Gem（Geminiのカスタム機能）作成支援</span><span>Google Workspace</span></div>
+        <h3>見積3枚が1つの表に</h3>
         <dl>
           <dt>困りごと</dt>
           <dd>相見積の比較や議事録づくりが、現場仕事のあとの手作業になっていた。</dd>
           <dt>やったこと</dt>
           <dd>見積書を読み取って1つの比較表（スプレッドシート）にするGemと、議事録をつくるGemの作成を支援。Gemini Notebookの使い方もあわせてお伝えした。</dd>
-          <dt>変わったこと</dt>
+          <dt class="after">変わったこと</dt>
           <dd><b>比較資料づくりが「貼って、確認するだけ」に。</b>道具は社内に残り、自分たちで直せます。</dd>
         </dl>
-        <figure>
-          <img src="img/zukai_case1_mitsumori.webp" alt="見積書3枚が、貼るだけで1つの比較表になる図" width="1200" height="675" loading="lazy">
-        </figure>
       </div>
+      <figure><img src="img/zukai_case1_mitsumori.webp" alt="見積書3枚が、貼るだけで1つの比較表になる図" width="1200" height="675" loading="lazy"></figure>
     </article>
 
-    <article class="case">
-      <h3>サポート3回で、資格試験に合格。</h3>
-      <div class="meta"><span>個人（50代）</span><span>勉強の仕組みづくり＋伴走3回</span><span>ChatGPT</span></div>
-      <div class="case-grid">
+    <article class="case" data-rv>
+      <div>
+        <div class="meta"><span>個人（50代）</span><span>勉強の仕組みづくり＋伴走3回</span><span>ChatGPT</span></div>
+        <h3>サポート3回で資格試験に合格</h3>
         <dl>
           <dt>困りごと</dt>
           <dd>法令や過去問が多く、何からどう繰り返せばよいか分からない。</dd>
           <dt>やったこと</dt>
           <dd>過去問と法令をもとに問題集をつくり、紙に印刷して解き、写真を撮ってAIに採点してもらう仕組みを一緒に構築。その後のサポートは3回ほど。</dd>
-          <dt>変わったこと</dt>
+          <dt class="after">変わったこと</dt>
           <dd>この仕組みで勉強を重ね、<b>資格試験に合格された。</b></dd>
         </dl>
-        <figure>
-          <img src="img/zukai_case2_goukaku.webp" alt="問題集をつくる・紙で解く・写真を撮る・AIが採点の循環で合格に至る図" width="1200" height="675" loading="lazy">
-        </figure>
       </div>
+      <figure><img src="img/zukai_case2_goukaku.webp" alt="問題集をつくる・紙で解く・写真を撮る・AIが採点の循環で合格に至る図" width="1200" height="675" loading="lazy"></figure>
     </article>
 
-    <article class="case">
-      <h3>バラバラだった書式が、ひとつにそろった。</h3>
-      <div class="meta"><span>学校現場での実例</span><span>GASの小さなWebアプリ</span><span>会社の書式にも同じ型で</span></div>
-      <div class="case-grid">
+    <article class="case" data-rv>
+      <div>
+        <div class="meta"><span>学校現場での実例</span><span>GASの小さなWebアプリ</span><span>会社の書式にも同じ型で</span></div>
+        <h3>バラバラだった書式が<br>ひとつにそろった</h3>
         <dl>
           <dt>困りごと</dt>
           <dd>文書の書式が人によってバラバラで、集めるたびに直す仕事が生まれていた。</dd>
           <dt>やったこと</dt>
           <dd>入力するだけで同じ書式に仕上がる小さなWebアプリを作成。あわせて時間数の集計表も、どこからでも最新が見られる形にした。</dd>
-          <dt>変わったこと</dt>
+          <dt class="after">変わったこと</dt>
           <dd><b>「そろえる仕事」自体がなくなった。</b>同じ型は、日報・見積・報告書にもそのまま使えます。</dd>
         </dl>
-        <figure>
-          <img src="img/zukai_case3_shoshiki.webp" alt="バラバラの書式がフォーム入力で同じ書式にそろう図" width="1200" height="675" loading="lazy">
-        </figure>
       </div>
+      <figure><img src="img/zukai_case3_shoshiki.webp" alt="バラバラの書式がフォーム入力で同じ書式にそろう図" width="1200" height="675" loading="lazy"></figure>
     </article>
   </div>
 </section>
 
-<!-- 6. 進め方 + FAQ -->
-<section id="faq">
+<section class="sec" id="works">
   <div class="wrap">
-    <span class="kick">FLOW</span>
-    <h2>進め方</h2>
-    <p class="sec-lead">はじめての方も、この3つだけです。</p>
-    <div class="flow-grid">
-      <div class="step"><i>1</i><b>話を聞く</b><p>いまのやり方と困りごとを、そのまま。オンラインでも伺います</p></div>
-      <div class="step"><i>2</i><b>小さく1つ試す</b><p>いちばん効きそうな1つの業務から。大きな導入はしません</p></div>
-      <div class="step"><i>3</i><b>使えるまで</b><p>研修と伴走で、道具が「置き物」にならないところまで</p></div>
+    <h2 class="h2" data-rv>作ったものは<br>ぜんぶ公開しています</h2>
+    <p class="lead" data-rv>言葉より先に、実物を見てください。すべてクリックでそのまま開きます。</p>
+    <div class="works">
+      <a class="work" data-rv href="https://a-tozak.github.io/School_Stock/" target="_blank" rel="noopener">
+        <div class="th"><img src="img/shot_schoolstock.webp" alt="" width="1000" height="750" loading="lazy"></div>
+        <b>School Stock<span>↗</span></b><p>自作教材1,300枚超の無料の棚。登録不要</p>
+      </a>
+      <a class="work" data-rv href="../shiryo/">
+        <div class="th"><img src="img/shot_shiryo.webp" alt="" width="1000" height="750" loading="lazy"></div>
+        <b>研修資料<span>→</span></b><p>研修でお配りしている資料を全ページ公開</p>
+      </a>
+      <a class="work" data-rv href="https://a-tozak.github.io/jugyo-planner/" target="_blank" rel="noopener">
+        <div class="th"><img src="img/shot_planner.webp" alt="" width="1000" height="750" loading="lazy"></div>
+        <b>授業プランナー<span>↗</span></b><p>AIエージェントで学期の見通しを組む実演</p>
+      </a>
+      <a class="work" data-rv href="https://a-tozak.github.io/reboot-print/" target="_blank" rel="noopener">
+        <div class="th"><img src="img/shot_reboot.webp" alt="" width="1000" height="750" loading="lazy"></div>
+        <b>高校リブートプリント<span>↗</span></b><p>学び直しから始める高校全教科の無料プリント</p>
+      </a>
     </div>
+  </div>
+</section>
 
-    <span class="kick">FAQ</span>
-    <h2>よくある質問</h2>
-    <div class="faq" style="margin-top:20px;">
+<section class="flow-sec" id="flow">
+  <div class="wrap">
+    <h2 class="h2" data-rv>進め方</h2>
+    <p class="lead" data-rv>はじめての方も、この3つだけです。</p>
+    <div class="steps">
+      <div class="step" data-rv>
+        <div class="pic"><img src="../assets/v13/step1_assessment.webp" alt="机の上のノートとクリップボードと湯のみ" width="720" height="720" loading="lazy"></div>
+        <div>
+          <div class="no"><b>01</b><span>アセスメント</span></div>
+          <h3>話を聞く</h3>
+          <p>いまのやり方と困りごとを、そのまま。オンラインでも伺います</p>
+        </div>
+      </div>
+      <div class="step" data-rv>
+        <div class="pic"><img src="../assets/v13/step2_plan.webp" alt="紙に並んだ付箋と、はずした付箋が一枚" width="720" height="720" loading="lazy"></div>
+        <div>
+          <div class="no"><b>02</b><span>計画立案</span></div>
+          <h3>小さく1つ試す</h3>
+          <p>いちばん効きそうな1つの業務から。大きな導入はしません</p>
+        </div>
+      </div>
+      <div class="step" data-rv>
+        <div class="pic"><img src="../assets/v13/step3_bansou.webp" alt="並んで歩く二人の後ろ姿と、道の先の小さな事務所" width="720" height="720" loading="lazy"></div>
+        <div>
+          <div class="no"><b>03</b><span>伴走</span></div>
+          <h3>使えるまで</h3>
+          <p>研修と伴走で、道具が「置き物」にならないところまで</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="faq">
+  <div class="wrap">
+    <h2 class="h2" data-rv>よくある質問</h2>
+    <div class="faq" data-rv>
       <details>
         <summary>現役の先生なんですか？　平日は動けますか？</summary>
         <div class="a"><p>はい、いまも小学校の教室に立っています。打ち合わせは夕方以降・週末・オンラインで。所属先の規程と手続きを確認のうえ、お受けできるかも含めてお返事します。</p></div>
@@ -426,67 +428,59 @@
   </div>
 </section>
 
-<!-- 7. 人 -->
-<section class="who" id="who">
-  <div class="wrap">
-    <span class="kick">PROFILE</span>
-    <h2>伴走するのは、こんな人です。</h2>
-    <div class="who-card" style="margin-top:24px;">
-      <img src="../assets/author.jpg" alt="外﨑顯博の写真">
-      <div>
-        <div class="nm">外﨑 顯博<small>とざき あきひろ</small></div>
-        <p class="rl">福岡県飯塚市・公立小学校教員（ICT教育担当／研究主任）／LiFE with（個人プロジェクト）</p>
-        <p class="bio">「パソコンが苦手」の人が使えるようになるまで教えるのが、学校での本業です。むずかしい言葉を現場の言葉に翻訳して、その人のやり方に合う形で道具を渡す。それを10年やってきました。</p>
-        <div class="chips">
-          <span>小学校教諭一種</span><span>特別支援学校教諭一種</span><span>Google認定教育者 Lv1・2</span><span>トレーナースキル</span><span>GEGリーダー</span><span>Gemini認定教育者</span>
-        </div>
-        <a class="more" href="../profile/">くわしくは、1枚のプロフィールへ →</a>
-      </div>
+<section class="prof" id="who">
+  <div class="wrap"><div class="prof-in">
+    <div class="ph" data-rv><img src="../assets/author.jpg" alt="外﨑顯博の写真" width="240" height="240"></div>
+    <div data-rv>
+      <h2 class="h2">伴走するのは<br>こんな人です</h2>
+      <h3>外﨑 顯博<small>とざき あきひろ</small></h3>
+      <div class="role">福岡県飯塚市・公立小学校教員（ICT教育担当／研究主任）／LiFE with（個人プロジェクト）</div>
+      <p class="txt">「パソコンが苦手」の人が使えるようになるまで教えるのが、学校での本業です。むずかしい言葉を現場の言葉に翻訳して、その人のやり方に合う形で道具を渡す。それを10年やってきました。</p>
+      <div class="creds"><span>小学校教諭一種</span><span>特別支援学校教諭一種</span><span>Google認定教育者 Lv1・2</span><span>トレーナースキル</span><span>GEGリーダー</span><span>Gemini認定教育者</span></div>
+      <a class="more arrow" href="../profile/">くわしくは、1枚のプロフィールへ </a>
     </div>
-  </div>
+  </div></div>
 </section>
 
-<!-- 8. 相談 -->
 <section class="contact" id="contact">
   <div class="wrap">
-    <span class="kick">CONTACT</span>
-    <h2>まず、話を聞かせてください。</h2>
-    <p>いまのやり方と困りごとを、そのままの言葉で。3日以内をめやすにお返事します。<br>現役教員のため、所属先の規程を確認のうえ、お受けできるかも含めてお答えします。</p>
-    <a class="btn big" href="https://docs.google.com/forms/d/e/1FAIpQLScyRZwj-S5ikt6aPwgLji8dzjfuklwg_K55keDtboNvg9O_bg/viewform" target="_blank" rel="noopener">相談フォームを開く</a>
-    <p class="mail">メール <a href="mailto:EdtechChikuho@gmail.com">EdtechChikuho@gmail.com</a> でも受け付けています</p>
+    <h2 class="h2">まず話を<br>聞かせてください</h2>
+    <p class="lead">いまのやり方と困りごとを、そのままの言葉で。3日以内をめやすにお返事します。</p>
+    <div class="cta">
+      <a class="btn btn-main arrow" href="https://docs.google.com/forms/d/e/1FAIpQLScyRZwj-S5ikt6aPwgLji8dzjfuklwg_K55keDtboNvg9O_bg/viewform" target="_blank" rel="noopener">相談フォームを開く</a>
+      <a class="btn btn-line" href="mailto:EdtechChikuho@gmail.com">メールで送る</a>
+    </div>
+    <p class="note">現役教員のため、所属先の規程を確認のうえ、お受けできるかも含めてお答えします。</p>
   </div>
 </section>
+<div class="closing" role="img" aria-label="遠くから見たまちの水彩画。学校と事務所の屋根と緑の山"></div>
+</main>
 
 <footer>
   <div class="wrap">
-    <div class="fgrid">
+    <div class="ft">
       <div>
-        <img src="../assets/logo.png" alt="LiFE with">
-        <p>ゆとりをもって、人を育てる社会へ。<br>福岡・筑豊から、学校と会社の「道具の翻訳と定着」を伴走します。</p>
+        <a class="logo" href="../"><img src="../assets/logo.png" alt="LiFE with" width="576" height="196"></a>
+        <p>業務改善の個人プロジェクト<br>運営：外﨑顯博（福岡県筑豊地域）</p>
       </div>
-      <div>
-        <b>THIS PAGE</b>
-        <ul>
-          <li><a href="#service">できること</a></li>
-          <li><a href="#case">事例</a></li>
-          <li><a href="#faq">進め方・よくある質問</a></li>
-          <li><a href="#who">プロフィール</a></li>
-          <li><a href="#contact">相談する</a></li>
-        </ul>
+      <div><b>THIS PAGE</b>
+        <a href="#service">できること</a><a href="#case">事例</a><a href="#flow">進め方</a><a href="#faq">よくある質問</a><a href="#who">プロフィール</a><a href="#contact">相談する</a>
       </div>
-      <div>
-        <b>LiFE with</b>
-        <ul>
-          <li><a href="../">トップ（学校・先生の方へ）</a></li>
-          <li><a href="../profile/">はじめての方へ（1枚）</a></li>
-          <li><a href="https://a-tozak.github.io/School_Stock/" target="_blank" rel="noopener">School Stock ↗</a></li>
-          <li><a href="https://a-tozak.github.io/life-with/shiryo/" target="_blank" rel="noopener">研修資料 ↗</a></li>
-        </ul>
+      <div><b>SITE</b>
+        <a href="../">トップ</a><a href="../#school">学校の方へ</a><a href="../shiryo/">研修資料</a><a href="../news/">お知らせ</a><a href="../profile/">はじめての方へ（1枚）</a><a href="https://a-tozak.github.io/School_Stock/" target="_blank" rel="noopener">School Stock ↗</a><a href="../privacy/">プライバシーポリシー</a>
       </div>
     </div>
-    <p class="legal">本サイトは個人の活動として運営しており、所属する学校・自治体の公式見解を示すものではありません。<br>© LiFE with（外﨑顯博）</p>
+    <p class="copy">本サイトは個人の活動として運営しており、所属する学校・自治体の公式見解を示すものではありません。© LiFE with（外﨑顯博）</p>
   </div>
 </footer>
 
+<script>
+(function(){
+  var els=document.querySelectorAll('[data-rv]');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
 </body>
 </html>
