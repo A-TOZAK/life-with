@@ -13,3 +13,8 @@ assets/ehon/_orig/
 
 参考リサーチ*.md
 business設計*.md
+
+# v13の絵の原寸PNGと整える道具（サイトはwebpだけを使う）
+assets/v13/*.png
+assets/v13/_prep.py
+assets/og_v12.png

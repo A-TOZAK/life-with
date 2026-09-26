@@ -6,6 +6,7 @@
    ============================================================ */
 
 window.LW_NEWS = [
+  { d: "2026.09.26", tag: "GEG", t: "12月12日（土）に、GEG Chikuho 5周年のイベント「Mining Possibility」を飯塚市で開きます。九州のGEGリーダーとの合同開催です", href: "https://sites.google.com/view/geg-chikuho/event/261212" },
   { d: "2026.08.10", tag: "研修", t: "大分県の義務教育学校（1〜9年生）で生成AIの研修を行いました。当日のサイトと、その場でつくった「テスト勉強プランナー」を公開しています", href: "https://a-tozak.github.io/sekiden-kenshu/" },
   { d: "2026.08.07", tag: "登壇", t: "Gemini for Education アイデアソン 2026 Showcase（東京）の最終発表会で発表しました。発表したサイト「Gemini アイデア村」は、コピーして使える形で公開しています", href: "https://sites.google.com/view/gemini-tozaki/home" },
   { d: "2026.08.01", tag: "イベント", t: "EDUCROSS in 北九州 2026 を開催しました（生成AI × 授業づくり × 組織づくり／当日の資料はこちら）", href: "https://a-tozak.github.io/educross-day/" },
@@ -19,6 +20,7 @@ window.LW_NEWS = [
 ];
 
 window.LW_SCHEDULE = [
+  { d: "12.12", t: "GEG Chikuho 5周年「Mining Possibility」（飯塚市）", s: "共同リーダーとして企画・運営。九州のGEGリーダーとの合同開催", done: false, href: "https://sites.google.com/view/geg-chikuho/event/261212", hrefLabel: "イベントの案内" },
   { d: "7.22", t: "校内研修（福岡県内の小学校）", s: "ICT活用事例の共有。うまくいかなかった事例も隠さず共有", done: true, href: "shiryo/", hrefLabel: "配った資料" },
   { d: "7.28", t: "校内研修（福岡県内の小学校）", s: "生成AI・Google Workspaceの活用。受講者アンケート11件・満足度9.5／10", done: true, href: "shiryo/", hrefLabel: "配った資料" },
   { d: "7.30", t: "企業セミナー登壇（福岡）", s: "ミカサ商事「先生の課題を今すぐ解決！Gemini で校務&授業大改革セミナー」に、導入校の立場で登壇", done: true, href: "https://www.mikasa.ne.jp/gemini_school-upd-2026/", hrefLabel: "セミナーの案内" },
